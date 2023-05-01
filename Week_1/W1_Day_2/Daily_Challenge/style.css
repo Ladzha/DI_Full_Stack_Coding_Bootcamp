@@ -4,7 +4,6 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    background-size: 120%;
     color: rgb(253, 253, 187);
     margin: 0px;
     font-family: 'Comme', sans-serif;
@@ -23,19 +22,6 @@ nav img {
     padding: 10px 20px;
     left: 20px;
 }
-main{
-    margin: 250px 50px 0px 70px;   
-}
-
-p{
-    width: 65%;
-    font-size: 1.1em;
-}
-
-h1{
-    font-size: 4em;
-    text-transform: uppercase;
-}
 
 ul{
     position:absolute;
@@ -46,17 +32,91 @@ li{
     display: inline-block;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 0px 10px;
 }
 
-footer{
-    text-align: center;
-    padding-top: 25px;
-}
 
 a{
     color: azure;
     font-size: 1.2em;
     text-decoration: none;
 }
+
+
+main{
+    width: 65vw;
+    height: 50vh;
+    margin: 250px 50px 0px 70px;   
+}
+
+
+h1{
+    font-size: 4em;
+    text-transform: uppercase;
+}
+
+p{
+    font-size: 1.1em;
+}
+
+footer{
+    width: 100vw;
+    text-align: center;
+    padding-top: 25px;
+    position: absolute;
+    margin: 0px;
+}
+
+/* on Small devices (portrait tablets and large phones, 600px and up): */
+@media only screen and (min-width: 600px ) {
+    h1 {
+        font-size: 35px;
+    }
+
+    nav {
+        background-color: yellow;
+        color: black;
+    }
+
+  }
+
+  /* on Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px ) {
+    h1 {
+      font-size: 25px;
+    }
+
+    nav {
+        background-color: lightgreen;
+        color: black;
+    }
+
+  }
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px ) {
+    nav {
+        background-color: red;
+        color: white;
+    }
+
+    h1{
+        display: inline;
+        margin-right: -214px;
+    }
+
+    p{
+        display: inline;
+        position: relative;
+        left: 250px; 
+    }
+
+  }
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200x ) {
+    nav {
+        background-color: black;
+        color: white;
+    }
+
+  }

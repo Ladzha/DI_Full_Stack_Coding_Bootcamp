@@ -3,6 +3,7 @@ body{
     background-image: url(Tor.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
     background-size: 120%;
     color: rgb(253, 253, 187);
     margin: 0px;

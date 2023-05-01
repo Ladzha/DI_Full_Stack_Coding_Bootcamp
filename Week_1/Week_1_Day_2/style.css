@@ -1,0 +1,10 @@
+p::first-letter{
+    font-size: 5em;
+    line-height: 0.9;
+    margin-right: 5px;
+   /* margin-top: -12px; */
+    /* margin-bottom: -20px; */
+    color: blueviolet;
+    float: left;
+    /* float: top; */
+}

@@ -1,0 +1,40 @@
+img{
+    border: 5px solid orange;
+    width: 300px;
+    margin: 50px;
+}
+
+td, th {
+    border: 1px solid black;
+}
+
+td{
+    padding: 20px 0px;
+}
+.red-border{
+    color: red;
+    border-color: red;
+}
+
+.no-border{
+    border: 0px;
+    height: 15px;
+}
+
+h3{
+    text-decoration: underline;
+    margin-left: 40px;
+}
+
+#line-space{
+    line-height: 1.5;
+}
+section{
+text-align: center;
+width: 80%;
+margin: auto;
+}
+
+ul{
+    margin-left: 70px;
+}

@@ -1,0 +1,61 @@
+body{
+    background-color: #0d0551;
+    background-image: url(Tor.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 120%;
+    color: rgb(253, 253, 187);
+    margin: 0px;
+    font-family: 'Comme', sans-serif;
+}
+
+nav, footer{
+    background-color: rgb(0, 0, 0);
+    height: 70px;
+    position: relative;
+    color: beige;
+}
+
+nav img {
+    width: 50px;
+    position:absolute;
+    padding: 10px 20px;
+    left: 20px;
+}
+main{
+    margin: 250px 50px 0px 70px;   
+}
+
+p{
+    width: 65%;
+    font-size: 1.1em;
+}
+
+h1{
+    font-size: 4em;
+    text-transform: uppercase;
+}
+
+ul{
+    position:absolute;
+    right: 20px;
+}
+
+li{
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2em;
+    margin: 0px 10px;
+}
+
+footer{
+    text-align: center;
+    padding-top: 25px;
+}
+
+a{
+    color: azure;
+    font-size: 1.2em;
+    text-decoration: none;
+}

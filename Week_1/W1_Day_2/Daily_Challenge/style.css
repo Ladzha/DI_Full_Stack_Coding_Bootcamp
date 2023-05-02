@@ -64,8 +64,8 @@ footer{
     width: 100vw;
     text-align: center;
     padding-top: 25px;
-    position: absolute;
-    margin: 0px;
+    position: fixed;
+    bottom: 0px;
 }
 
 /* on Small devices (portrait tablets and large phones, 600px and up): */

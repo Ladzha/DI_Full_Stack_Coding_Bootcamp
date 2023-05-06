@@ -2,17 +2,35 @@ body{
     margin: 0;
     text-align: center;
     box-sizing: border-box;
-    background-color: rgb(247, 247, 247);
+    background-repeat: none;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(218, 218, 218);
 }
+
+.container{
+    width: 80vw;
+    background-color: brown;
+    background-image: url(leaves.jpg);
+    margin-left: auto;
+    margin-right: auto;
+}
+
 header{
-    height: 10vh;
+    height: 5vh;
+    background-color: lightgray;
     position: relative;
+    padding: 10px;
 }
 header > button {
     position: absolute;
-    right: 20px;
+    right: 5vw;
 }
-
+header > p {
+    position: absolute;
+    font-weight: bold;
+    color: rgb(46, 46, 46);
+    left: 5vw;
+}
 button{
     background-color: rgb(0, 153, 255);
     border: none;
@@ -20,29 +38,25 @@ button{
     height: 20px;
     margin: 10px;
 }
-main {
-    background-image: url(leaves.jpg);
-    background-color: aqua;
-    height: 100vh;
-    color: white;
-    position: relative;
+.main-part {
+    color:white;
+    height: 400px;
 }
 
-main > section {
+.main-part > section {
     display: inline-box;
-    position: absolute;
-    left: auto;
     background-color: rgb(3, 246, 145);
-    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+.main-part + section {
+    background-color: lightgray;
 }
 
-main + section {
-    background-color: bisque;
-}
-
-div {
+.card {
     display: inline-block;
     width: 20%;
     margin: 20px;
     border: 1px solid;
-}
+} 

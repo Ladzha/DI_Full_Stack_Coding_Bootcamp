@@ -33,7 +33,8 @@ elif len(user_string)> 10:
 print('Fist characters of the text: ' + user_string[0])
 print('Last characters of the text: ' + user_string[-1])
 
-for user_string[n] in user_string:
-    n=0
-    n+=1
-    print(user_string[n])
+result = ""
+if user_string == "Hello World":  
+    for n in user_string:
+        result += n
+        print(result)

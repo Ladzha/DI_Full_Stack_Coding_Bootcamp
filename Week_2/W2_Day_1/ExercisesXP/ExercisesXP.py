@@ -7,7 +7,7 @@ Hello world
 Hello world
 '''
 print("Exercise 1")
-print('Hello world \nHello world \nHello world \nHello world')
+print('Hello world\n'*4)
 print("****************************")
 '''
 Exercise 2 : Some Math
@@ -55,7 +55,7 @@ print("Exercise 5")
 name = "Alla"
 age = 36
 shoe_size = 7
-info = 'I am still', name, "I'm", age, 'years old. My shoe size is', shoe_size
+info = f'I am still {name} I\'m  {age} years old. My shoe size is {shoe_size}'
 print(info)
 print("****************************")
 '''

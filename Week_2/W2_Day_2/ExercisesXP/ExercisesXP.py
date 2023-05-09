@@ -24,13 +24,9 @@ print("****************************")
 '''
 🌟 Exercise 2 :  Tuple
 Given a tuple which value is integers, is it possible to add more integers to the tuple?
+
+No. Tuples are immutable. You cannot change them. 
 '''
-print("Exercise 2")
-
-
-
-print()
-print("****************************")
 
 '''
 🌟 Exercise 3: List
@@ -69,18 +65,13 @@ Create a list containing the following sequence 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 (
 '''
 print("Exercise 4")
 
-# list_conteiner = []
-# for i in range(0, 6):
-#     if +i%2==0:
-#         list_conteiner.append(i + 0.5)
-#     else:
-#         list_conteiner.append(i+1)
-    
-# print(list_conteiner)
+list_conteiner = []
+for i in range(1, 6):
+    list_conteiner.append(i + 0.5)
+    list_conteiner.append(i+1)
+list_conteiner.pop()   
+print(list_conteiner)
 
-# NOT DONE
-
-print()
 print("****************************")
 
 '''
@@ -109,6 +100,7 @@ Write a while loop that will continuously ask the user for their name, unless th
 '''
 print("Exercise 6")
 
+user_name = ''
 while user_name != "Alla":
     user_name = input("What is your name? ")    
 print("Thats my name too!")
@@ -127,15 +119,15 @@ If the user's input is NOT in the list, print, “You chose a new fruit. I hope 
 '''
 print("Exercise 7")
 
-fruits = input("What is your favorite fruits? Separate the fruits with a single space")
+fruits = input("What is your favorite fruits? Separate the fruits with a single space ")
 fruits_list = fruits.split(" ")
 new_fruit = input("Input a name of any fruit ")
 
-for i in fruits_list:   
-    if i== fruits_list:   
-        print('You chose one of your favorite fruits! Enjoy!')
+if new_fruit in fruits_list:
+    print('You chose one of your favorite fruits! Enjoy!')
 else:
-    print('You chose a new fruit. I hope you enjoy')
+    print('You chose a new fruit. I hope you enjoy')    
+    
 print("****************************")
 
 
@@ -146,10 +138,16 @@ As they enter each topping, print a message saying you'll add that topping to th
 Upon exiting the loop print all the toppings on the pizza pie and what the total price is (10 + 2.5 for each topping).
 '''
 print("Exercise 8")
-
-input = ('Enter a series of pizza toppings,')
-
-print('We will add that topping to your pizza')
+price = 10
+user_topping = ''
+toppings = []
+while user_topping != "quit":
+    user_topping = input('Enter a series of pizza toppings: ')
+    if user_topping != "quit":
+        print(f'We will add {user_topping} topping to your pizza')
+        toppings.append(user_topping)
+        price += 2.5
+print(f'Your pizza will cost {price}')
 print("****************************")
 
 '''
@@ -168,13 +166,19 @@ Given a list of names, write a program that asks teenager for their age, if they
 At the end, print the final list.
 '''
 print("Exercise 9")
-person_age = input('Put the age of each person who wants a ticket. Separate the ages with a single space')
-print()
+print("Exercise 9")
 
-age = 0
-price = 0
+family_members_age = input('Put the age of each person who wants a ticket. Separate the ages with a single space')
 
-print()
+persons_list=family_members_age.split(" ")
+print(family_members_age)
+
+if age <=3:
+    price = 0
+elif 3 < age <= 12:
+    price = 10
+else:
+    price = 15
 print("****************************")
 
 '''
@@ -188,9 +192,14 @@ After all the sandwiches have been made, print a message listing each sandwich t
 '''
 print("Exercise 10")
 
+sandwich_orders = ["Tuna sandwich", "Avocado sandwich", "Egg sandwich", "Sabih sandwich", "Pastrami sandwich"]
 
+finished_sandwiches = []
 
-print()
+for sandwich in sandwich_orders:
+    finished_sandwiches.append(sandwich)
+    print(f'I made your {sandwich}')
+    
 print("****************************")
 
 '''
@@ -202,6 +211,13 @@ Make sure no pastrami sandwiches end up in finished_sandwiches.
 '''
 print("Exercise 11")
 
+sandwich_orders = ["Tuna sandwich", "Avocado sandwich", "Egg sandwich", "Sabih sandwich", "Pastrami sandwich"]
+sandwich_orders.extend(["Pastrami sandwich","Pastrami sandwich", "Pastrami sandwich", "Pastrami sandwich"])
 
-print()
-print("****************************")
+print("The deli has run out of pastrami")
+while "Pastrami sandwich" in sandwich_orders:
+    sandwich_orders.remove("Pastrami sandwich")
+    
+for sandwich in sandwich_orders:
+    finished_sandwiches.append(sandwich)
+    print(f'I made your {sandwich}')

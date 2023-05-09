@@ -132,17 +132,28 @@ Store the total cost of all the family's tickets and print it out.
 '''
 A group of teenagers are coming to your movie theater and want to watch a movie that is restricted for people between the ages of 16 and 21.
 Given a list of names, write a program that asks teenager for their age, if they are not permitted to watch the movie, remove them from the list.
-At the end, print the final list.
+# At the end, print the final list.
 
-'''
-teen_names = ["John", "Emma", "Sam", "Alex", "Samantha", "Sara"]
+# '''
+# teen_names = ["John", "Emma", "Sam", "Alex", "Samantha", "Sara"]
 
-user_input = input('Put your age')
+# user_input = input('Put your age')
 
-for i in teen_names:
-    age = int(input('Put your age: '))
-    if 16 < age < 21:
-        teen_names.remove(i)   
+# for i in teen_names:
+#     age = int(input('Put your age: '))
+#     if 16 < age < 21:
+#         teen_names.remove(i)   
         
-print(teen_names)
+# print(teen_names)
 
+games = {
+    'score1' : 10,
+    'score2' : 14,
+    'score3' : 6,
+    'score4' : 5,
+}
+total = 0
+for score in games.values() :
+    total +=score
+    
+print(total)

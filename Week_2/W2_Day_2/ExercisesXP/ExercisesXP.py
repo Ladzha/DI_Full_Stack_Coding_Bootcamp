@@ -166,19 +166,31 @@ Given a list of names, write a program that asks teenager for their age, if they
 At the end, print the final list.
 '''
 print("Exercise 9")
-print("Exercise 9")
 
-family_members_age = input('Put the age of each person who wants a ticket. Separate the ages with a single space')
+user_input = input('Put the age of each person who wants a ticket. Separate the ages with a single space ')
 
-persons_list=family_members_age.split(" ")
-print(family_members_age)
+persons_list= user_input.split(" ")
+total_price = 0
+for i in range(len(persons_list)):
+    persons_list[i] = int(persons_list[i])    
+    if persons_list[i] <=3:
+        ticket_price = 0
+    elif 3 < persons_list[i] <= 12:
+        ticket_price  = 10
+    else:
+        ticket_price  = 15
+    total_price += ticket_price
+print(total_price)
 
-if age <=3:
-    price = 0
-elif 3 < age <= 12:
-    price = 10
-else:
-    price = 15
+teen_names = ["John", "Emma", "Sam", "Alex", "Samantha", "Sara"]
+
+for i in teen_names:
+    age = int(input('Put your age: '))
+    if 16 < age < 21:
+        teen_names.remove(i)   
+        
+print(teen_names)
+
 print("****************************")
 
 '''

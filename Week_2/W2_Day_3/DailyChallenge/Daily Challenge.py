@@ -21,24 +21,32 @@ list_index = [num for num in range(len(word))]
 my_dictionary = dict(zip(word, list_index))
 print(my_dictionary )
 
+print("Challenge 2")
+store = {
+  "Water": "$1",
+  "Bread": "$3",
+  "TV": "$1000",
+  "Fertilizer": "$20",
+  "Apple" : "$4",
+  "Fan": "$14",
+  "Pan": "$100",
+  "Spoon": "$2"
+}
 
-# store = {
-#   "Water": "1",
-#   "Bread": "3",
-#   "TV": "1,000",
-#   "Fertilizer": "20",
-#   "Apple" : "4",
-#   "Fan": "14",
-#   "Pan": "100",
-#   "Spoon": "2"
-# }
-# wallet = 30
-# # price_item = 0
-# can_buy = []
-# for i in store.values():
-#     if int(i) < wallet:
-#         can_buy.append(store)
-#         wallet -=i
-# print(can_buy)
+store = {key: value.replace("$", " ") for key, value in store.items()}
 
+store = {key: int(value) for key, value in store.items()}
 
+wallet = int(input("How much money do you have: "))
+can_buy = []
+for key, value in store.items():
+  if value < wallet:
+      can_buy.append(key)
+      wallet -=value
+if can_buy:
+  can_buy.sort()
+  print(f'You can buy: {can_buy}')
+  
+else:
+  print("You can buy: Nothing")
+  

@@ -3,9 +3,11 @@ Exercise 1: Concatenate Lists
 Write code that concatenates two lists together without using the + sign.
 '''
 print("Exercise 1")
-my_fav_numbers = (1, 2, 3, 4, 5, 6, 7)
-my_fav_numbers.add(8)
-print('Hello world\n'*4)
+list_1=[1,2,3,4,5]
+list_2=[6,7,8,9,10]
+list_1.extend(list_2)
+list_3=list_1
+print(list_3)
 print("****************************")
 
 '''
@@ -15,7 +17,9 @@ Create a loop that goes from 1500 to 2500 and prints all multiples of 5 and 7.
 '''
 print("Exercise 2")
 
-
+for i in range(1500,2501):
+    if i%5==0 and i%7==0:
+        print(i)
 
 print()
 print("****************************")
@@ -32,8 +36,13 @@ Example: if input is 'Cortana' we should be printing the index 1
 '''
 print("Exercise 3")
 
+names = ['Samus', 'Cortana', 'V', 'Link', 'Mario', 'Cortana', 'Samus']
+user = input("Wtite your name: ")
+if user in names:
+    print(names.index(user))
+else:
+    print("You are not in the list")
 
-print()
 print("****************************")
 
 '''
@@ -48,9 +57,17 @@ Ask the user for 3 numbers and print the greatest number.
 '''
 print("Exercise 4")
 
-
-
-print()
+list_number = []
+number_1 = int(input("Input the 1st number: "))
+number_2 = int(input("Input the 2st number: "))
+number_3 = int(input("Input the 3st number: "))
+list_number.extend([number_1, number_2, number_3])
+new_list = list_number
+max_n = number_1
+for i in new_list:
+    if i>max_n:
+        max_n = i
+print(max_n)   
 print("****************************")
 
 '''
@@ -61,9 +78,15 @@ Loop over each letter and print a message that contains the letter and whether i
 
 '''
 print("Exercise 5")
-
-
-print()
+import string
+new_string = ''
+for i in string.ascii_lowercase:
+    new_string +=i
+for letter in new_string:
+    if letter in 'aeiou':
+        print (f'{letter} is vowel' ) 
+    else:
+        print (f'{letter} is consonant' ) 
 print("****************************")
 
 '''
@@ -76,9 +99,17 @@ If the letter doesn't exist in one of the words, print a friendly message with t
 '''
 print("Exercise 6")
 
+words = input("Input a 7 word, separate them with space: ")
+words_list=words.split(" ")
+letter = input("Input a letter: ")
+for i in range(len(words_list)):
+    if letter in words_list[i]:
+        for index, value in enumerate(words_list[i]):
+            if value==letter:
+                print(f'In word "{words_list[i]}" Letter "{value}" has index "{index}"')
+    else:
+        print(f'There is no letter "{letter}" in word "{words_list[i] }"')
 
-
-print()
 print("****************************")
 
 '''
@@ -88,8 +119,12 @@ Create a list of numbers from one to one million and then use min() and max() to
 '''
 print("Exercise 7")
 
+long_list = list(range(1, 1000000))
+min_num = min(long_list)
+max_num = max(long_list)
+sum_num = sum(long_list)
 
-print()
+print(f'{min_num}, {max_num}, {sum_num}')
 print("****************************")
 
 
@@ -105,10 +140,15 @@ Then, the output should be:
 
 '''
 print("Exercise 8")
+input_numbers = input("Input numbers, separate them with coma: ")
 
+list_input_numbers = input_numbers.split(",")
 
+tuple_input_numbers = tuple(list_input_numbers)
 
-print()
+print(list_input_numbers)
+print(tuple_input_numbers)
+
 print("****************************")
 
 '''
@@ -122,7 +162,14 @@ Bonus 2: on exiting the loop tally up and display total games won and lost.
 
 '''
 print("Exercise 9")
-
-
-print()
+import random
+input_num = None
+random_num = random.randrange(0,9)
+while input_num!=random_num or input_num != "quit":
+    input_num = int(input("Input a numbers from 0 to 9: "))
+    if input_num==random_num:
+        print("You are a winner!")
+        break
+    else:
+        print("Better luck next time.")
 print("****************************")

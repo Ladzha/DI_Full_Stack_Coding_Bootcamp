@@ -7,16 +7,16 @@ Create a set called friend_fav_numbers with your friend's favorites numbers.
 Concatenate my_fav_numbers and friend_fav_numbers to a new variable called our_fav_numbers.
 '''
 print("Exercise 1")
-my_fav_numbers = [1, 2, 3, 4, 5, 6]
+my_fav_numbers = {1, 2, 3, 4, 5, 6}
 print('my favorites numbers: ', my_fav_numbers)
-my_fav_numbers.append(7)
-my_fav_numbers.insert(0, 8)
+my_fav_numbers.update([0,7])
 print('my favorites numbers + adding numbers: ' , my_fav_numbers)
 my_fav_numbers.pop()
 print('my favorites numbers - last: ' , my_fav_numbers)
-friend_fav_numbers = [7, 8, 9, 10, 11, 12]
+friend_fav_numbers = {7, 8, 9, 10, 11, 12}
 print('my friend favorites numbers: ' , friend_fav_numbers)
-our_fav_numbers=my_fav_numbers+friend_fav_numbers
+our_fav_numbers=my_fav_numbers
+our_fav_numbers.update(friend_fav_numbers)
 print('our favorites numbers: ' , our_fav_numbers)
 
 print("****************************")
@@ -46,7 +46,7 @@ print("Exercise 3")
 basket = ["Banana", "Apples", "Oranges", "Blueberries"]
 print("Basket list", basket)
 basket.remove("Banana")
-basket.remove("Blueberries")
+basket.pop()
 print("Basket List - banana and Blueberries", basket)
 basket.append("Kiwi")
 basket.insert(0, "Apples")
@@ -185,7 +185,7 @@ print(total_price)
 teen_names = ["John", "Emma", "Sam", "Alex", "Samantha", "Sara"]
 
 for i in teen_names:
-    age = int(input('Put your age: '))
+    age = int(input(f'Put your age {i}: '))
     if 16 < age < 21:
         teen_names.remove(i)   
         

@@ -8,7 +8,7 @@ matrix_text = '''
     #t%
     ^r!
 '''
-
+print(f'Step 0: {matrix_text}')
 matrix_text = matrix_text.replace("\n", "")
 matrix_list = []
 for simbol in matrix_text: 
@@ -16,7 +16,6 @@ for simbol in matrix_text:
         matrix_list.append(simbol)
 print(f'Step 1: {matrix_list}')
 matrix = []
-m = []
 string = ""
 while matrix_list != []:
     matrix.append(matrix_list[:3])

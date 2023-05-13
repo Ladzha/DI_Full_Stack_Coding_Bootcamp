@@ -1,61 +1,54 @@
 
-board = [["1/1", "1/2", "1/3"], 
-        ["2/1", "2/2", "2/3"], 
-        ["3/1", "3/2", "3/3"]]
-row = 1
-column = 1
-def display_board(board):
-    print("Welcome to Tic Tac Toe")
-    print("Tic Tac Toe")
-    print("*********************")
-    for i in range(3):
-        print(f'* {board[0][0]}  | {board[0][0]}  |  {board[0][0]} *')
-        print(f'* -----|------|----- *')
-        print("*********************")
+board = [["  ", "  ", "  "], 
+        ["  ", "  ", "  "], 
+        ["  ", "  ", "  "]]
+row = -1
+column = -1
+print("Welcome to Tic Tac Toe")
+decor_line = '*'*17  
+line = "* ---|----|---- *"
+line_end = "*    |    |     *"
+
+def display_board(board): 
+  row = lambda row_num : f'* {board[row_num][0]} | {board[row_num][1]} | {board[row_num][2]}  *'
+  print("Tic Tac Toe")
+  print(decor_line)
+  print(row(0))
+  print(line)
+  print(row(1))
+  print(line)
+  print(row(2))
+  print(line)
+  print(line_end)
+  print(decor_line)
+display_board(board)
+
+symbol = ('x ','o ')
+def player_input():
+  turn = 1
+  current_symbol = symbol[0] if turn %2 ==0 else symbol[1]
+  print(f'Player "{current_symbol}" your turn')    
+  row = int(input("Enter row from 1 to 3: "))
+  while row > 3 or row < 1:
+    row = int(input("Enter row from 1 to 3: "))   
+  column = int(input("Enter column from 1 to 3: "))
+  while column > 3 or column < 1:
+    column = int(input("Enter column from 1 to 3: "))
+  if board[row-1][column-1] == "  ":
+    board[row-1][column-1] = current_symbol
+    turn+=1
+    print(board[row-1][column-1])   
+  else:
+    ('Try again')
+player_input()
+display_board(board)
+player_input()
 display_board(board)
 
 
-# def player_input(player):
-#     row = int(input("Enter row: "))
-#     if row > 3 or row < 1:
-#         while row > 3 or row < 1:
-#             row = int(input("Enter row: "))   
-#     column = int(input("Enter column: "))
-#     if column > 3 or row < 1:
-#         while column > 3 or column < 1:
-#             column = int(input("Enter column: "))
-#     return row, column     
-# player_input("player_X")
 
 
-player_1_move_1 = int(input("Enter row: "))
-player_1_move_2 = int(input("Enter column: "))
 
-board[player_1_move_1-1][player_1_move_2-1] = "x"
-print(board[player_1_move_1-1][player_1_move_2-1])
+# board[player_1_move_1-1][player_1_move_2-1] = "x"
+# print(board[player_1_move_1-1][player_1_move_2-1])
 
-# def display_board(board):
-#     print("Welcome to Tic Tac Toe")
-#     print("Tic Tac Toe")
-#     print("*********************")
-    
-#     print(f'*  {board[0][0]}   |  {board[0][0]}   |   {board[0][0]}   *')
-#     print(f'* -----|-----|----- *')
-#     print(f'* {board[0][0]}  | {board[0][0]}    |  {board[0][0]}    *')
-#     print(f'* -----|-----|----- *')
-#     print(f'*    {board[0][0]}  |   {board[0][0]}  |  {board[0][0]}    *')
-#     print("*********************")
-# display_board(board)
-
-# if row == 1:
-# for row in range(3):
-#         for column in board[0]:
-#             if column == 2:
-#                 print("lolololololol")
-#         # print(row)
-# if row == 2:
-#     for row in board[1]:
-#         print(row)
-# if row == 3:
-#     for row in board[2]:
-#         print(row)

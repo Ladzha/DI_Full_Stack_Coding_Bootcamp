@@ -1,5 +1,5 @@
 '''
-Exercise 1: Concatenate Lists
+Exercise 1: Concatenate Lists.
 Write code that concatenates two lists together without using the + sign.
 '''
 print("Exercise 1")

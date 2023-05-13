@@ -194,7 +194,7 @@ print(teen_names)
 print("****************************")
 
 '''
-Exercise 10 : Sandwich Orders
+Exercise 10 : Sandwich Orders.
 sandwich_orders = ["Tuna sandwich", "Avocado sandwich", "Egg sandwich", "Sabih sandwich", "Pastrami sandwich"]
 
 Use the above list called sandwich_orders.

@@ -37,27 +37,36 @@
 class Farm():
     def __init__(self, farmname):
         self.farmname = farmname
-        self.farmanimals  = []
-        self.farmanimalsnumber  = []
+        self.farm_animals_dict  = {}
     
-    def add_animal (self, new_farm_animal, animal_number = 1):
-        self.farmanimals.append(new_farm_animal)
-        self.farmanimalsnumber.append(animal_number)    #?????????    
+    def add_animal (self, farm_animal, animal_number = 1):
+        if farm_animal not in self.farm_animals_dict.keys():
+            self.farm_animals_dict[farm_animal] = animal_number
+        else:
+            self.farm_animals_dict[farm_animal] += animal_number 
     def get_info(self):
              
-        return f'{self.farmname} farm \n \t E-I-E-I-0!'
-    
-    def get_animal_types (self):
-        print(self.farmanimals)
-        
-    # def get_short_info (self):
-    #     self.get_animal_types ()
-    #     print(f'McDonald\'s farm has , {x} and {x}.')
-        
+        text = f'{self.farmname} farm'
+        for farm_animal, animal_number in self.farm_animals_dict.items():
+            text += f'\n {farm_animal} : {animal_number}' 
+        text +='\n \t E-I-E-I-0!'
+        return text
+    def  get_animal_types(self):
+        sorted_list=[]
+        for name in self.farm_animals_dict.keys():
+            sorted_list.append(name)
+        sorted_list.sort()
+        return sorted_list
+    def get_short_info(self):
+        result = f'McDonald\'s farm has '
+        for name in self.farm_animals_dict.keys():         
+            result += name + ', '
+        return result  
 macdonald = Farm("McDonald")
 macdonald.add_animal('cow', 5)
 macdonald.add_animal('sheep')
 macdonald.add_animal('sheep')
 macdonald.add_animal('goat', 12)
 print(macdonald.get_info())
-# macdonald.get_animal_types()
+print(macdonald.get_animal_types())
+print(macdonald.get_short_info())

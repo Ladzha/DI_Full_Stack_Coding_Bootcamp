@@ -141,22 +141,23 @@ class Zoo:
 
     def sort_animals (self):
         self.animals.sort()
-        new_group = []
-        groups = dict(name=2)
-        # for animal in self.animals:
-        for i, group in enumerate(self.animals):
-            # print(animal)  
-            # new_group.append(animal[0])                  
-            # fist_letter = animal[0]
-            # if animal[0+1][fist_letter]==new_group[0]:
-            
-                # print(fist_letter)
-            print(groups)
-            
-        #groups them together based on their first letter.
+        sorted_animals = {}
+        for animal in self.animals:
+            first_letter = animal[0]          
+            if first_letter in sorted_animals.keys():
+                sorted_animals[first_letter].append(animal)
+            else:
+                sorted_animals[first_letter] = [animal]
+            self.grouped_animals ={}
+            group_num = 1
+        for key in sorted(sorted_animals.keys()):
+            self.grouped_animals[group_num]=sorted_animals[key]
+            group_num +=1
 
-    def get_groups  (self):
-        print(self.animals)
+    def get_groups(self):
+        self.sort_animals()
+        for group_number, group_value in self.grouped_animals.items():
+            print(f"{group_number} : {', '.join(group_value)}")
 
 ramat_gan_safari = Zoo('Ramat Gan Safari')
 ramat_gan_safari.add_animals('Giraffe')
@@ -166,18 +167,10 @@ ramat_gan_safari.add_animals('Baboon')
 ramat_gan_safari.add_animals('Cougar')
 ramat_gan_safari.add_animals('Eel')
 ramat_gan_safari.add_animals('Tiger')
-# ramat_gan_safari.get_animals()
-# ramat_gan_safari.sell_animal('Eel')
+ramat_gan_safari.get_animals()
+ramat_gan_safari.sell_animal('Eel')
 ramat_gan_safari.sort_animals()
-# ramat_gan_safari.get_groups()
+ramat_gan_safari.get_groups()
 
 
 print("****************************")
-
-# class Name():
-#     def __init__(self, name):
-#         self.name = name
-#         pass
-
-# my_name = Name("Alla")
-# print(my_name.name)

@@ -87,6 +87,7 @@ print(brand["number_stores"])
 print("****************************")
 
 print("Exercise 4")
+#In step4.1 - You are adding Ronald - name without i.
 users = ["Mickey","Minnie","Ronald","Ariel","Pluto"]
 
 values_a = []

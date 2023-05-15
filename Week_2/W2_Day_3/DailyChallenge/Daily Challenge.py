@@ -16,6 +16,8 @@ Examples
 
 '''
 print("Challenge 1")
+# check again your output. It is not as the exercise is aking to do. 
+# I am pretty sure you will get it fast, so I wont say what is the problem. Please come to me if you need help ;)
 word = input("Write a word: ")
 list_index = [num for num in range(len(word))]
 my_dictionary = dict(zip(word, list_index))

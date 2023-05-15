@@ -52,21 +52,24 @@ class Farm():
         text +='\n \t E-I-E-I-0!'
         return text
     def  get_animal_types(self):
-        sorted_list=[]
-        for name in self.farm_animals_dict.keys():
-            sorted_list.append(name)
-        sorted_list.sort()
-        return sorted_list
+        all_keys =list(self.farm_animals_dict.keys())
+        return sorted(all_keys)
     def get_short_info(self):
-        result = f'McDonald\'s farm has '
-        for name in self.farm_animals_dict.keys():         
-            result += name + ', '
-        return result  
+        all_keys_animal = self.get_animal_types() 
+        for animal, amount in self.farm_animals_dict.items(): 
+            if amount > 1:    
+                position_animal = all_keys_animal.index(animal)  
+                all_keys_animal[position_animal] +='s'
+        joining_animal = ", ".join(all_keys_animal[:-1])
+        sentence = f'{self.farmname} farm has {joining_animal} and {all_keys_animal[-1]}'
+        print(sentence)
 macdonald = Farm("McDonald")
 macdonald.add_animal('cow', 5)
 macdonald.add_animal('sheep')
 macdonald.add_animal('sheep')
 macdonald.add_animal('goat', 12)
+macdonald.add_animal('zebra')
 print(macdonald.get_info())
 print(macdonald.get_animal_types())
-print(macdonald.get_short_info())
+macdonald.get_short_info()
+

@@ -39,7 +39,9 @@ chartreux_1 = Chartreux("Murka", 3)
 siamese_1 = Siamese("Lola", 4)
 sara_pets = Pets("Cat")
 all_cats = [bengal_1, chartreux_1, siamese_1]
-# print(all_cats.walk())
+sara_pets =Pets(all_cats)
+sara_pets.walk()
+
 print('****************')
 
 # 🌟 Exercise 2 : Dogs
@@ -62,25 +64,23 @@ class Dog():
         return f'{name} is barking'
     def run_speed(self):
         run_speed = self.weight/self.age*10
-        return f'{self.name}\'s running speed is {self.weight} / {self.age} * 10 = {run_speed}'
+        print(f'{self.name}\'s running speed is {self.weight} / {self.age} * 10 = {run_speed}')
         return run_speed 
     def fight(self, another_dog):
-        winner_name = ''
-        if self.run_speed() > another_dog.run_speed():
-            # winner_name = self.name
-            print(self.name)
+        if self.run_speed()*self.weight > another_dog.run_speed()*another_dog.weight:
+            winner_name = self.name
         else: 
             winner_name = another_dog.name
-            print(self.name)
-        # message = 'f{winner_name} won the fight.'        
-        # return message
-        print(self.name)
+        message = f'{winner_name} won the fight.'     
+        return message
 
-dog_1 = Dog('Sharick', 3, 20)
-dog_2 = Dog('Luky', 4, 10)
-dog_3 = Dog('Lola', 6, 5)
+dog_1 = Dog('Sharick', 2, 2)
+dog_2 = Dog('Luky', 4, 8)
+dog_3 = Dog('Lola', 8, 4)
 print(dog_1.bark(dog_1.name))
-print(dog_2.run_speed())
-print(dog_2.fight(dog_1))
-print()
+print(dog_2.bark(dog_2.name))
+print(dog_3.bark(dog_3.name))
+print(dog_1.fight(dog_2))
+print(dog_2.fight(dog_3))
+print(dog_3.fight(dog_1))
 print('****************')

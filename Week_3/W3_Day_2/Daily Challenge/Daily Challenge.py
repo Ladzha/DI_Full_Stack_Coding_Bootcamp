@@ -1,0 +1,1 @@
+class Pagination(items = None, pageSize =10)

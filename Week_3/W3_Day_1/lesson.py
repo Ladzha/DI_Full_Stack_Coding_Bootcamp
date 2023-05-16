@@ -49,11 +49,27 @@ class Employee():
         self.age = age
         self.job = job
         self.salary = salary
+    # def __add__(self):
+    #     string = f'{self.firstname} + {self.lastname}'
+    #     return string
+    
+    def __gt__(employee1, employee2):
+        if employee1.salary > employee2.salary:
+            result =employee1.salary
+        else:
+            result = employee2.salary
+        return result
+    
+    def __str__(self):
+        string = f'I\'m {self.firstname} {self.lastname}'
+        return string
+    
     def eemployee_info(self):
         return f'{self.firstname} {self.lastname} is {self.age} years old {self.job} {self.salary}'
     
     def get_fullname(self):
         return self.firstname + " " + self.firstname
+    
     def happy_birthday(self) : 
         return self.age+1
         
@@ -64,14 +80,20 @@ employee_1 = Employee('Lea', 'Smith', 30,'developer', 30000)
 
 employee_2 = Employee('David', 'Schartz', 20, 'project manager', 20000)
 
-print(employee_1.eemployee_info())
-print(employee_2.eemployee_info())
-
+print(employee_1)
+print(employee_2)
+print(employee_1 > employee_2)
 print(employee_1.get_fullname())
-print(employee_2.get_fullname())
-
 print(employee_1.happy_birthday())
-print(employee_2.happy_birthday())
 
-print(employee_1.get_promotion(20))
-print(employee_2.get_promotion(15))
+# print(employee_1.eemployee_info())
+# print(employee_2.eemployee_info())
+
+# print(employee_1.get_fullname())
+# print(employee_2.get_fullname())
+
+# print(employee_1.happy_birthday())
+# print(employee_2.happy_birthday())
+
+# print(employee_1.get_promotion(20))
+# print(employee_2.get_promotion(15))

@@ -30,7 +30,7 @@
 # input_ex()
 # print(input_ex.__doc__)
 
-# print('***************')
+print('***************')
 
 print('Exercise 2')
 class Currency:
@@ -39,8 +39,8 @@ class Currency:
         self.amount = amount
         
     def __str__(self):
-        int_putput = int(self.amount)
-        return int_putput
+        print(f'{self.amount} {self.currency}')
+        return f'{self.amount} {self.currency}'
         
     def str(self):
         self.__str__(self)      
@@ -59,8 +59,8 @@ c2 = Currency('dollar', 10)
 c3 = Currency('shekel', 1)
 c4 = Currency('shekel', 10)
 
-# str(c1)
-# int(c1)
+str(c1)
+int(c1)
 # repr(c1)
 # c1 + 5
 # c1 + c2

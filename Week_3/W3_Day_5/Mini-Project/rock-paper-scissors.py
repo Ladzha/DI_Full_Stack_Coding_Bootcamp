@@ -1,14 +1,29 @@
-# import game
+from game import Game
 def get_user_menu_choice():
     print('*********************\nRock, Paper, Scissors\n*********************')
-    print('Menu: \n (g) Play a new game \n (x) Show scores and exit')
+    choice =input('Menu: \n (g) Play a new game \n (x) Show scores and (q)exit:')
+    if choice == 'g' or choice == 'x' or choice == 'q':
+        choice = choice     
+    else: 
+        print('You entered an irrelevant value')
+    return choice
     
-def user_move():
-    user_input = input('Select (r)rock, (p)paper, (sscissors:  ')
-    return user_input
-    
-def show_result():
-    string = f'You chose: {user_move}. The computer chose: {game.random_choice}. Result: {game.result}'
+def print_results(results):
+    # results = {'win': 0, 'loss': 0, 'draw':0} # file
+    string = f'Game results:\n You won {results["win"]} times\nYou lost {results["loss"]} times\nYou drew {results["draw"]} times.\nThank you for playing!'
     return string
 
-show_menu()
+def main():
+    while True:
+        if get_user_menu_choice():
+            break
+        else:
+            get_user_menu_choice()
+    game1=Game()
+    game1.play()
+    
+
+    # if input()=='q':
+    #     print_results(results)
+        
+    

@@ -19,17 +19,20 @@ class Game():
         return computer_item
     
     def get_game_result(self):
+        results = {'win': 0, 'loss': 0, 'draw':0}
         user_item = self.get_user_item()
         computer_item = self.get_computer_item()
         if user_item==computer_item:
-            result = 'draw'
-            print('Draw')
+            results["draw"]+=1
+            result = 'draw' 
+            # print('Draw')
         elif user_item > computer_item:
-            result = 'won'
-            print('User won')
+            results["won"]+=1
+            # print('User won')
         elif computer_item>user_item:
+            results["loss"]+=1
             result = 'lost'
-            print('Computer won')
+            # print('Computer won')
         return result
     
     def play(self):

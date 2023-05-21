@@ -34,15 +34,15 @@
 
 
 -- SELECT first_name, last_name FROM actor WHERE first_name = 'Jon'OR last_name ='Samers'
---SELECT first_name, last_name FROM actor WHERE number_of_oscar >= 2
+-- SELECT first_name, last_name FROM actor WHERE number_of_oscar >= 2
 -- SELECT * FROM actor ORDER BY last_name ASC, first_name DESC 
 
 -- SELECT * FROM actor ORDER BY date_birth ASC LIMIT 1
 
---SELECT * FROM actor WHERE EXTRACT(YEAR from date_birth) >=1950
+-- SELECT * FROM actor WHERE EXTRACT(YEAR from date_birth) >=1950
 
---SELECT * FROM actor WHERE first_name LIKE '%r%'
---SELECT * FROM actor WHERE first_name ILIKE '%J%'
+-- SELECT * FROM actor WHERE first_name LIKE '%r%'
+-- SELECT * FROM actor WHERE first_name ILIKE '%J%'
 
 -- UPDATE actor
 -- SET last_name = 'Clooney'
@@ -103,4 +103,18 @@
 -- SET number_of_oscar= 5
 -- WHERE actor_id = 6
 -- RETURNING *
-SELECT * FROM actor WHERE number_of_oscar >=4
+-- SELECT * FROM actor WHERE number_of_oscar >=4
+
+-- ******************EXERCISE******************
+
+-- SELECT * FROM actor
+-- SELECT COUNT(first_name) FROM actor;
+
+-- INSERT INTO actor (first_name, last_name, date_birth, number_of_oscar)
+-- VALUES ('Brad', 'Rupert', '1977-01-04', DEFAULT)
+
+-- SELECT * FROM actor
+
+
+
+

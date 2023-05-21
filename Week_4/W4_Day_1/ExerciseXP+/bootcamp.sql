@@ -44,4 +44,6 @@
 -- Select 3.8
 -- SELECT first_name, last_name FROM students WHERE students_id =1 OR students_id =3
 -- Select 4
--- SELECT * FROM students WHERE birth_date >= '1/01/2000' 
+-- SELECT students_id, first_name, last_name, TO_CHAR(birth_date, 'DD/MM/YYYY') AS formatted_birth_date
+-- FROM students
+-- WHERE birth_date >= '2000-01-01';

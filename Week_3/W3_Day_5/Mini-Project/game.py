@@ -29,7 +29,3 @@ class Game():
         print(f'You selected: {self.user_item}. The computer selected: {self.computer_item}. You {result}')
         return result
     
-
-
-
-

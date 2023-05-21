@@ -23,6 +23,7 @@ user_string = input('Write string in 10 letters: ')
 
 if len(user_string) == 10:
     print('Perfect string')
+    print(user_string)
 elif len(user_string)< 10:
     print('String not long enough')
     

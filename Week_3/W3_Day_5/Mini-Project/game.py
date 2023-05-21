@@ -1,16 +1,14 @@
-
 import random
 class Game():
-    def __init__(self) -> None:
-        pass
-    
-    def get_user_item(self):
-        while True:
-            user_item = input('Select (r)rock, (p)paper, (s)scissors:  ')
-            if(user_item=='r' or user_item=='p' or user_item=='s'):
-                break
-            else:
-                print('You entered an irrelevant value')
+    def __init__(self):
+        self.user_item = self.get_user_item()
+        self.computer_item = self.get_computer_item()
+        
+    def get_user_item(self):  
+        user_item = input('Select (r)rock, (p)paper, (s)scissors:  ').lower()
+        choices = ['r', 'p', 's']
+        while user_item not in choices:
+            user_item = input('Select (r)rock, (p)paper, (s)scissors:  ').lower()
         return user_item
     
     def get_computer_item(self):
@@ -19,46 +17,19 @@ class Game():
         return computer_item
     
     def get_game_result(self):
-        results = {'win': 0, 'loss': 0, 'draw':0}
-        user_item = self.get_user_item()
-        computer_item = self.get_computer_item()
-        if user_item==computer_item:
-            results["draw"]+=1
-            result = 'draw' 
-            # print('Draw')
-        elif user_item > computer_item:
-            results["won"]+=1
-            # print('User won')
-        elif computer_item>user_item:
-            results["loss"]+=1
-            result = 'lost'
-            # print('Computer won')
-        return result
+        if self.user_item==self.computer_item:
+            return 'draw'
+        elif self.user_item == 'p' and self.computer_item == 'r' or self.user_item == 'r' and self.computer_item == 's' or self.user_item == 's' and self.computer_item == 'p':
+            return 'win'
+        elif self.computer_item == 'p' and self.user_item == 'r' or self.computer_item == 'r' and self.user_item == 's' or self.computer_item == 's' and self.user_item == 'p':
+            return 'loss'
     
     def play(self):
-        user_item = self.get_user_item()
-        computer_item = self.get_computer_item()
         result = self.get_game_result() 
-        print(f'You selected: {user_item}. The computer selected: {computer_item}. You {result}')
+        print(f'You selected: {self.user_item}. The computer selected: {self.computer_item}. You {result}')
         return result
     
 
 
-game1=Game()
-game1.play()
-
-    
-
-
-        # result=''
-        # print(f'My move - {random_choice}') 
-    # print('Let\'s play a game')
-
-    # player_won=0
-    # player_lost=0
-    # player_drew=0
-
-    # print(f'Game results:\n You won {player_won} times\nYou lost {player_lost} times\nYou drew {player_drew} times')
-    # print('Thank you for playing!')
 
 

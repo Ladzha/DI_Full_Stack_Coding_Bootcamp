@@ -113,8 +113,45 @@
 -- INSERT INTO actor (first_name, last_name, date_birth, number_of_oscar)
 -- VALUES ('Brad', 'Rupert', '1977-01-04', DEFAULT)
 
+
+-- SELECT * FROM actor
+
+-- SELECT COUNT(*) FROM actor
+
+-- SELECT MAX(salary) FROM actor
+
+-- SELECT first_name FROM actor WHERE salary = (MAX(salary) FROM actor)????
+
+
+-- SELECT * FROM actor
+
+-- SELECT LOWER(nationality) AS nationality, COUNT(*) AS number_of_people --same coloumn
+-- FROM actor
+-- GROUP BY LOWER(nationality)
+
+
+
+-- SELECT LOWER(nationality) AS nationality, COUNT(*) AS number_of_people
+-- FROM actor
+-- GROUP BY LOWER(nationality)
+-- HAVING LOWER(nationality) = 'israel'
+
+-- SELECT salary, COUNT (*)
+-- FROM actor
+-- GROUP BY salary
+
+-- SELECT COUNT (*) FROM actor
+-- SELECT COUNT (nationality) FROM actor
 -- SELECT * FROM actor
 
 
+-- CREATE TABLE movies(
+--     movie_id SERIAL PRIMARY KEY, 
+--     movie_title VARCHAR (50) NOT NULL, 
+--     movie_story TEXT, 
+--     actor_playing_id INTEGER REFERENCES actor (actor_id)
+-- );
 
 
+
+SELECT * FROM movies

@@ -10,7 +10,7 @@
 -- profile_id SERIAL PRIMARY KEY, 
 -- isLoggedIn BOOLEAN DEFAULT false,
 -- customer_id INTEGER NOT NULL,
--- FOREIGN KEY (customer_id) REFERENCES customer (customer_id)
+-- FOREIGN KEY (customer_id)  UNIQUE REFERENCES customer (customer_id)
 -- );
 -- 2
 -- INSERT INTO customer (first_name, last_name)
@@ -22,7 +22,7 @@
 -- INSERT INTO customer_profile (isLoggedIn, customer_id)
 -- VALUES (TRUE, (SELECT customer_id FROM customer WHERE first_name = 'John' AND last_name = 'Doe')),
 -- (TRUE, (SELECT customer_id FROM customer WHERE first_name = 'Jerome' AND last_name = 'Lalu'))
-
+-- RETURNING *
 
 -- SELECT * FROM customer_profile
 
@@ -30,6 +30,7 @@
 -- 4.1
 -- SELECT first_name FROM customer
 -- JOIN customer_profile ON customer.customer_id=customer_profile.customer_id
+-- WHERE isLoggedIn
 -- 4.2
 -- SELECT first_name, isLoggedIn FROM customer
 -- LEFT JOIN customer_profile 
@@ -75,7 +76,7 @@
 -- CREATE TABLE library (
 -- book_fk_id INTEGER,
 -- student_fk_id INTEGER,
--- borrowed_date DATE,
+-- borrowed_date DATE DEFAULT NOW() NOT NULL, 
 -- FOREIGN KEY (book_fk_id) REFERENCES book (book_id) ON DELETE CASCADE ON UPDATE CASCADE,
 -- FOREIGN KEY (student_fk_id) REFERENCES student (student_id) ON DELETE CASCADE ON UPDATE CASCADE,
 -- PRIMARY KEY(book_fk_id, student_fk_id)
@@ -95,7 +96,9 @@
 -- ((SELECT book_id FROM book WHERE book_title = 'Harry Potter'),
 -- (SELECT student_id FROM student WHERE student_name = 'Bob'), '12/08/2021')
 -- 7.1
--- SELECT * FROM library
+-- SELECT student_name, book_title, borrowed_date FROM library
+-- INNER JOIN student ON student.student_id = library.student_fk_id
+-- INNER JOIN book ON book.book_id= library.book_fk_id
 -- 7.2
 -- SELECT student_name, book_title FROM student 
 -- INNER JOIN library ON student.student_id = library.student_fk_id

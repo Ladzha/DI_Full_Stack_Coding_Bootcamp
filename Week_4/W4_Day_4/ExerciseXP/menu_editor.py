@@ -53,7 +53,7 @@ def add_item_to_menu():
 def remove_item_from_menu():
     user_item=input("Put the name of item to delete: ")
     
-    user_item = MenuManager.get_by_name(user_item)
+    user_item = MenuItem(user_item)
     if user_item:
         user_item.delete()
         print('Item was deleted successfully')

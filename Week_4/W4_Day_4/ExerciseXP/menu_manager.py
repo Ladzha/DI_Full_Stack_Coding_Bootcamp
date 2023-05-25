@@ -28,7 +28,7 @@ class MenuManager():
             cursor = connection.cursor()
             query = f"SELECT item_name, item_price FROM menu_Items WHERE item_name = '{name}'"
             cursor.execute(query)
-            result = cursor.fetchone()
+            result = cursor.fetchall()
             print(result)
         except:
             print('We don\'t have this in the menu')
@@ -57,3 +57,5 @@ class MenuManager():
         return item_list
         cursor.close()
         connection.close()
+MenuManager.get_by_name('Roll')
+# MenuManager.all_items()

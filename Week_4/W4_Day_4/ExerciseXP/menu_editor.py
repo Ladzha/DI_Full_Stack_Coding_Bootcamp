@@ -63,12 +63,11 @@ def remove_item_from_menu():
     show_user_menu()
 
 def update_item_from_menu():
-    user_item=input("Put item and price to update, sepatated by space: ") 
-    user_list = user_item.split()
+    user_item_name=input("Put item name: ")
+    user_item_price=input("Put item price: ")  
     try:
-        user_list[1] = int(user_list[1])
-        user_item = MenuItem(user_list[0], user_list[1])
-        user_item.update(user_list[0], user_list[1])
+        user_item = MenuItem(user_item_name, user_item_price)
+        user_item.update(user_item_name, user_item_price)
         print('Item was added successfully')
     except:
         print('Wrong value')

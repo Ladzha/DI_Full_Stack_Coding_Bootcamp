@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+        <p>Sorted list by age:</p>
+        {% for person in people_list%}
+        {{person}}
+        <p><a href="people/{{pers.id}}">{{ pers.name|title }}</a>, {{pers.age}}, {{pers.country | upper}}</p> 
+        {% endfor %}
+
+        {{person.id}},
+        {{person.name}}, 
+        {{person.age}}, 
+        {{person.country}} 
+</body>
+</html>

@@ -10,17 +10,28 @@
 <body>
     {{form}}
     <h1>Todo list</h1>
-    {%for category in category_list%}
-    <h2>{{category}}</h2>
-    {%for todo in category%}
-    <br> title {{todo.title}}
-    <br> details {{todo.details}}
-    <br> has been done {{todo.has_been_done}}
-    <br> date creation {{todo.date_creation}}
-    <br> date completion {{todo.date_completion}}
-    <br> deadline date {{todo.deadline_date}}
-    <br> category {{todo.category}}
+    {%for todo in todos_all%}
+    <br> Title: {{todo.title}}<br>
+    <br> Details: {{todo.details}}<br>
+    <br> Has been done: {{todo.has_been_done}}<br>
+    <br> Date creation: {{todo.date_creation}}<br>
+    <br> Date completion: {{todo.date_completion}}<br>
+    <br> Deadline date: {{todo.deadline_date}}<br>
+    <br> Category: {{todo.category}}<br>
+    {% if task.date_completion %}
+    <p>Completed on: {{ todo.date_completion }}</p>
+{% endif %}
+    <form method="POST" action="{% url 'todo_done' todo.id %}">
+        {% csrf_token %}
+        {% if todo.has_been_done %}
+        <button type="submit" name="undone" style="background-color: rgb(255, 137, 137);">DONE</button>
+    {% else %}
+        <button type="submit" name="done" style="background-color: rgb(117, 148, 117);">DONE</button>
+    {% endif %}
+    </form>
     {%endfor%}
-    {%endfor%}
+
+    <p><a href="../add-task/">Add new task</a></p>
+
 </body>
 </html>

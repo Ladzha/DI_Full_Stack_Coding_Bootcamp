@@ -22,6 +22,12 @@
     {% for director in film.director.all %}
     {{ director }}{% if not forloop.last %}, {% endif %}
     {% endfor %} </p>
+<p>Rivew: 
+    {% for review in film.reviews.all %}
+    {{ review.review_text }}
+    {{ review.rating }}
+    {{ review.review_date}}
+    {% endfor %} </p>
 
 {%endfor%}
 {%endblock%}

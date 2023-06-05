@@ -1,13 +1,19 @@
 {%extends 'partials/base.html'%}
 
-
 {%block title%}
-Title
+<h1>Movies</h1>
 {%endblock%}
 
-
 {%block content%}
-<p>Primer</p>
+{%for film in object_list%}
+<p> <strong> Title: {{film.title}} </strong></p>
+<p>Release date: {{release_date.title}}</p>
+<p>Created in country: {{film.created_in_country}}</p>
+<p>Available in countries: {{film.available_in_countries}}</p>
+<p>Category: {{film.category}}</p>
+<p>Director: {{film.director}}</p>
+
+{%endfor%}
 <p>{{film_form.title}}</p>
 <p>{{director_form.first_name}}</p>
 <p>{{director_form.last_name}}</p>

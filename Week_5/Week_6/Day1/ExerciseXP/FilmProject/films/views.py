@@ -7,16 +7,22 @@ from .forms import FilmForm, DirectorForm
 # Create your views here.
 
 class HomePageView(ListView):
-    model = Film
-    template_name = 'homepage.html'
+    model = Film # модель на которую ссылается. Будет отображаться список из этой модели. Т.е список фильмов или их параметров?
+    template_name = 'homepage.html' #шаблон указывает, чтобы 
     context_object_name = 'homepage'
     
 class FilmCreateView(CreateView):
+    model = Film
+    fields = '__all__'
     film_form = FilmForm
-    template_name = 'addFilm.html'
-    context_object_name = 'homepage'
+    template_name = 'film/addFilm.html'
+    context_object_name = 'addFilm'
+    success_url = reverse_lazy('addFilm')
     
 class DirectorCreateView(CreateView):
+    model = Director
+    fields = '__all__'
     director_form = DirectorForm
-    template_name = 'addDirector.html'
-    context_object_name = 'homepage'
+    template_name = 'director/addDirector.html'
+    context_object_name = 'addDirector'
+    success_url = reverse_lazy('addDirector')

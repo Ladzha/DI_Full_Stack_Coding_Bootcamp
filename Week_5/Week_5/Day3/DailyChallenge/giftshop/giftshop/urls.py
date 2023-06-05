@@ -1,5 +1,5 @@
 """
-URL configuration for FilmProject project.
+URL configuration for giftshop project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,13 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from films.views import *
+from gift.views import home, categories, category, gifs, gif, add_category_view, add_gif_view, like_gifs
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('homepage/', HomePageView.as_view(), name = 'homepage'),
-    path('addFilm/', FilmCreateView.as_view(), name = 'addFilm'),
-    path('addDirector/', DirectorCreateView.as_view(), name = 'addDirector'),
-    
+    path('home/',home),
+    path('categories/', categories),
+    path('category/<int:id>', category),
+    # path('gifs/', gifs),
+    path('gif/<int:id>', gif),
+    path('add_category/', add_category_view),
+    path('add_gif/', add_gif_view),
+    path('like_gifs/', like_gifs),
 ]
+like_gifs

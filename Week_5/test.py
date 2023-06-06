@@ -1,33 +1,22 @@
-people_list = [
-    {
-    "id": 1,
-    "name": "Bob Smith",
-    "age": 35,
-    "country": "USA"
-    },
-    {
-    "id": 2,
-    "name": "Martha Smith",
-    "age": 60,
-    "country": "USA"
-    },
-    {
-    "id": 3,
-    "name": "Fabio Alberto",
-    "age": 18,
-    "country": "Italy"
-    },
-    {
-    "id": 4,
-    "name": "Dietrich Stein",
-    "age": 85,
-    "country": "Germany"
-    }
-] 
+# def clean_title(self):
+#     title = self.cleaned_data['title']
+#     if 'Django' in title:
+#         raise forms.ValidationsError('Error in the title')
+#     else: 
+#         return title
 
-def age_sorted(x):
-    return x['age'] 
-sorted_people_list = sorted(people_list, key = age_sorted)
-for person in sorted_people_list:
-    print(person['id'], person['name'], person['age'], person['country'])
-print(sorted_people_list)
+# def clean(self):
+#     clean_data=super().clean()
+#     title = clean_data['title'] #v skopbkah potomu cho eto slovar
+#     content = clean_data['content']
+#     author = clean_data['author']
+    
+#     if author.user.is_staff and 'slovo' in content:
+#         raise forms.ValidationsError('Cannot be admin and write about content')
+#     else:
+#         clean_data
+        
+#         # promitions comes from model
+
+
+                # <!-- <a class="nav-link" href="{% url 'account/signup' %}">Sign up</a> -->

@@ -1,0 +1,35 @@
+{%extends 'partials/base.html'%}
+
+{%block title%}
+
+<h1>Film</h1>
+
+{%endblock%}
+
+{%block content%}
+
+<p> <strong> Title: {{filmDetail.title}} </strong></p>
+<p>Release date: {{filmDetail.release_date}}</p>
+<p>Created in country: {{filmDetail.created_in_country}}</p>
+<p>Available in countries: 
+    {% for country in filmDetail.available_in_countries.all %}
+    {{ country }}
+    {% endfor %} </p>
+<p>Category:
+    {% for category in filmDetail.category.all %}
+    {{ category }}
+    {% endfor %} </p>
+<p>Director:
+    {% for director in filmDetail.director.all %}
+    {{ director }}
+    {% endfor %} </p>
+<p>Rivew:
+    {% for review in filmDetail.reviews.all %}
+    {{ review.review_text }}
+    {{ review.rating }}
+    {{ review.review_date}}
+    {% endfor %}
+     </p>
+<p><button><a href="{% url 'favouriteFilm' filmDetail.id %}">Favorite</a></button></p>
+
+{%endblock%}

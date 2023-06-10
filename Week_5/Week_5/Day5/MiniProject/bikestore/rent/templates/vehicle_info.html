@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+
+{%block title%}
+Vehicle information
+{%endblock%}
+{%block content%}
+<br><strong>Vehicle type: {{vehicle_info.vehicle_type | upper}}</strong> <br>
+<br><strong>Size:</strong> {{vehicle_info.size | upper}}</strong><br>
+<br><strong>Real cost:</strong> {{vehicle_info.real_cost}}<br>
+<br><strong>Date created:</strong> {{vehicle_info.date_created}}<br>
+{%endblock%}

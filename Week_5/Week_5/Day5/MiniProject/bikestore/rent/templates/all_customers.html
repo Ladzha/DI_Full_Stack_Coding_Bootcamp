@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+
+{%block title%}
+All customers
+{%endblock%}
+Add customers
+{%block content%}
+
+{%for customer in all_customers%}
+<br><strong>Name: {{customer.first_name | upper}} {{customer.last_name | upper}}</strong><br>
+<br><strong>Email:</strong> {{customer.email}}<br>
+<br><strong>Phone number:</strong> {{customer.phone_number}}<br>
+<br><strong>Address:</strong> {{customer.address}}<br>
+<br><strong>City:</strong> {{customer.city}}<br>
+<br><strong>Country:</strong> {{customer.country}}<br>
+{%endfor%}
+
+{%endblock%}

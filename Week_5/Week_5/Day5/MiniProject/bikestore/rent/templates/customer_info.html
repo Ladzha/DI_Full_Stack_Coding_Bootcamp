@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{%block title%}
+Customer information
+{%endblock%}
+{%block content%}
+
+    <br><strong>Name: {{customer_info.first_name | upper}} {{customer_info.last_name | upper}}</strong><br>
+    <br><strong>Email:</strong> {{customer_info.email}}<br>
+    <br><strong>Phone number:</strong> {{customer_info.phone_number}}<br>
+    <br><strong>Address:</strong> {{customer_info.address}}<br>
+    <br><strong>City:</strong> {{customer_info.city}}<br>
+    <br><strong>Country:</strong> {{customer_info.country}}<br>
+
+{%endblock%}
+
+

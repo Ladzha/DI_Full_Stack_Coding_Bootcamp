@@ -73,3 +73,4 @@ def manage_post(request):
 
 
 # CategoryRelationFormSet = forms.inlineformset_factory(Post, Category, form = CategoryForm, extra = 0 #not allow to create new category)
+

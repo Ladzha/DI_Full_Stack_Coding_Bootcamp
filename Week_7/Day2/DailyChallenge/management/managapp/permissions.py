@@ -11,17 +11,10 @@ from .models import DepartmentAdmin
 #         else:
 #             return False
         
-class IsDepartmentAdmin(permissions.BasePermission):
-    def has_permission(self, request, user):
-        return hasattr(request.user)
-
-# class IsForecaster(permissions.IsAuthenticated):
-#     def has_object_permission(self, request, view, obj):
-#         user = request.user
-#         #SAFE_METHOD: GET< HEAD< OPTIONS
-#         if request.method in permissions.SAFE_METHODS:
-#             return True
-#         elif hasattr(user, 'forecaster'):
-#             return True
-#         else:
-#             return False
+class IsDepartmentAdmin(permissions.BasePermission):  
+    pass
+    # def has_permission(self, request, view):
+    #     if request.user.IsAdminUser:
+    #         return True
+    #     else:
+    #         return False

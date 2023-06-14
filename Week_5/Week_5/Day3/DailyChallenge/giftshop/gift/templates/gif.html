@@ -9,11 +9,22 @@
 <body>
     <h1>Gif</h1>
     <img src="{{gif.url}}" alt="">
-    {{gif.title}}
-    {{gif.uploader_name}}
-    {{gif.created_at}}
-    <button type="submit" name="like" style="background-color: green;">like</button>
-    <button type="submit" name="dislike" style="background-color: red;">dislike</button>
+    
+        <p>Likes: {{gif.likes}}</p>
+        
+    <p>
+        {{gif.title}}
+        {{gif.uploader_name}}
+        {{gif.created_at}}
+    </p>
+    <form method="post" action="{% url 'gif' gif.id %}">
+        {% csrf_token %}
+    <p> <button type="submit" name="action" value="like" style="background-color: green;">like</button>
+        <button type="submit" name="action" value="dislike"   style="background-color: red;">dislike</button>
+    </p>
+    </form>
+    
+    
 
 
     

@@ -21,13 +21,12 @@ from gift.views import home, categories, category, gifs, gif, add_category_view,
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/',home),
-    path('categories/', categories),
-    path('category/<int:id>', category),
-    # path('gifs/', gifs),
-    path('gif/<int:id>', gif),
-    path('add_category/', add_category_view),
-    path('add_gif/', add_gif_view),
-    path('like_gifs/', like_gifs),
+    path('home/', home, name = 'home'),
+    path('categories/', categories, name = 'categories'),
+    path('category/<int:id>', category, name ='category-info'),
+    path('gif/<int:id>', gif, name = 'gif'),
+    path('add_category/', add_category_view, name = 'add-category'),
+    path('add_gif/', add_gif_view, name = 'add-gif'),
+    path('like_gifs/', like_gifs, name = 'like-gifs'),
 ]
 like_gifs

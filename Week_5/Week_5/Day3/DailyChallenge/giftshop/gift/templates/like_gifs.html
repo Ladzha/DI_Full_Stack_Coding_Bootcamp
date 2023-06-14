@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Popular</h1>
+
+    {%for gif in popular_gifs%}
+
+    <a href=" {% url 'gif' gif.id %}">
+        <img src="{{gif.url}}" alt="">
+        Likes: {{gif.likes}}
+    </a>
     
+    {%endfor%}
 </body>
 </html>

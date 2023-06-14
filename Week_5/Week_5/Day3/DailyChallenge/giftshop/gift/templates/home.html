@@ -11,7 +11,12 @@
     <nav><a href="/add_category">add new category</a></nav>
     <nav><a href="/add_gif">add new gif</a></nav>
     {%for gif in gifs_list%}
-    <img src="{{gif.url}}" alt="">
+
+    <a href=" {% url 'gif' gif.id %}">
+        <img src="{{gif.url}}" alt="">
+    </a>
+    Likes: {{gif.likes}}
+
     {%endfor%}
 </body>
 </html>

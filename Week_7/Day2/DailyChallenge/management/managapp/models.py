@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class Department(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
-    admin = models.ForeignKey('DepartmentAdmin', on_delete=models.CASCADE)
+    # admin = models.ForeignKey('DepartmentAdmin', on_delete=models.CASCADE)
     
     def __str__(self) -> str:
         return self.name

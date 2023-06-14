@@ -10,5 +10,5 @@ class CategoryForm(forms.ModelForm):
 class GifForm(forms.ModelForm):
     class Meta:
         model = Gif
-        exclude = ['created_at']
         fields = '__all__'
+        exclude = ['created_at', 'likes']

@@ -26,11 +26,20 @@ def by_name(request, name: str):
 
 def search(request):     
     if request.method == 'POST':
-        data = request.POST['search']
-
-        if SearchForm({'number' : data}).is_valid():
-            return redirect('phone_number', number = data)
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data.get('name')
+            number = form.cleaned_data.get('number')
+            if number:
+                return redirect('number', phonenumber=number)
+            elif name:
+                return redirect('name', name=name)
         else:
-            return redirect('name', input_name = data)
-
-    return render(request, 'search.html')
+            print('OOOO')
+            return redirect('searchperson')
+                
+    else:
+        form = SearchForm()
+        
+    context = {'form': form}
+    return render(request, 'about_person.html', context )

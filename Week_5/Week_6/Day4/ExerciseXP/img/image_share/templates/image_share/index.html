@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+
+{%block title%}
+All images
+{%endblock%}
+
+{%block content%}
+{%for image in img_list%}
+<p> <strong> Title: </strong>{{image.title}}</p>
+<p> <strong> Description: </strong>{{image.description}}</p>
+<p> <strong> User: </strong>{{image.user}}</p>
+<p><img src="{{ image.image.url }}" alt="{{ image.title }}"></p>
+{% empty %}
+  <p>No images found.</p>
+{%endfor%}
+
+{%endblock%}

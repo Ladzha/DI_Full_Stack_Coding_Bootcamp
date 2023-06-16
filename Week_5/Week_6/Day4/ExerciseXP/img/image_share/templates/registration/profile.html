@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+
+{%block title%}
+<h1>Profile</h1>
+
+{%endblock%}
+ 
+{%block content%}
+<p><strong> Username: </strong> {{user.username}}</p>
+<p><strong> First name: </strong> {{user.first_name}}</p>
+<p><strong> Last name: </strong> {{user.last_name}}</p>
+<p> <strong> Total Images: </strong> {{ profile.image_count }}</p>
+{%endblock%}

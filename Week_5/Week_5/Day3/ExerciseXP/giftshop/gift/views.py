@@ -32,7 +32,7 @@ def gif(request, id):
 def add_gif_view(request):
     
     if request.method == 'POST':
-        data = request.POST
+        data = request.POST        
         filled_form = GifForm(data)
         filled_form.save()
 

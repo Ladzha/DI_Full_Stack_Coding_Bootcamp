@@ -15,6 +15,7 @@ class NewImage(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user_profile')
     image_count = models.IntegerField(default=0)
+    
 
     def __str__(self):
             return f'Profile: {self.user.username}'
@@ -25,15 +26,24 @@ def update_image_count(sender, instance, created, **kwargs):
         profile = Profile.objects.get(user=instance.user)
         profile.image_count = NewImage.objects.filter(user=instance.user).count()
         profile.save() 
+
     
 # @receiver(post_save, sender=User)
 # def create_user_profile(sender, instance, created, **kwargs):
 #     if created:
-#         Profile.objects.create(user=instance)
+#         profile=Profile.objects.create(user=instance)
+#         profile.save() 
 
 
-# @receiver(post_save, sender=User)
-# def save_user_profile(sender, instance, **kwargs):
-#     instance.profile.save()
+def create_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+ 
+post_save.connect(create_profile, sender=User)
+        
+# def update_profile(sender, instance, created, **kwargs):
+#     if created == False:
+#         instance.profile.save()
+# post_save.connect(update_profile, sender=User)
 
         

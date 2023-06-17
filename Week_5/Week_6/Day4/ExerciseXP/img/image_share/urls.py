@@ -21,7 +21,7 @@ from image_share.views import upload_image, my_images, all_images, user_profile
 
 
 urlpatterns = [
-    path('all_images/', all_images, name ='all-images'),
+    path('', all_images, name ='all-images'),
     path('upload_image/', upload_image, name ='upload-image'),
     path('my_images/', my_images, name ='my-images'),
     path('login/', views.LoginView.as_view(template_name = 'registration/login.html'), name='login'),

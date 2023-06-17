@@ -74,6 +74,6 @@ class RegisterView(CreateView):
     form_class = SignupForm
     model = User
     template_name = 'register.html'
-    success_url = reverse_lazy('all-images')
+    success_url = reverse_lazy('login')
 
 

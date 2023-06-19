@@ -7,7 +7,7 @@ Add customers
 {%block content%}
 
 {%for customer in all_customers%}
-<br><strong>Name: {{customer.first_name | upper}} {{customer.last_name | upper}}</strong><br>
+<br><strong>Name: <a href="{% url 'customer_info' customer.id %}"> {{customer.first_name | upper}} {{customer.last_name | upper}}</strong><br></a>
 <br><strong>Email:</strong> {{customer.email}}<br>
 <br><strong>Phone number:</strong> {{customer.phone_number}}<br>
 <br><strong>Address:</strong> {{customer.address}}<br>

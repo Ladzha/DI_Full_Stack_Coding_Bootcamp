@@ -12,17 +12,11 @@ class AddRentalForm(forms.ModelForm):
         model = Rental
         fields = '__all__'
         widgets = {
-            'rental_date': forms.DateInput(attrs={'type': 'date'})
+            'rental_date': forms.DateInput(attrs={'type': 'date'}), 'return_date': forms.DateInput(attrs={'type': 'date'})
         }
         
-        widgets = {
-            'return_date': forms.DateInput(attrs={'type': 'date'})
-        }
         
 class AddVihicleForm(forms.ModelForm):
     class Meta:
         model = Vehicle
-        fields = '__all__'
-        widgets = {
-            'date_created': forms.DateInput(attrs={'type': 'date'})
-        }
+        fields = ['vehicle_type', 'real_cost', 'size']

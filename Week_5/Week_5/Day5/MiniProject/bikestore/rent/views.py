@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView, CreateView
 from .models import Customer, Vehicle, VehicleType, VehicleSize, Rental, RentalRate, RentalStation, Address
 from .forms import AddCustomerForm, AddRentalForm, AddVihicleForm
+import datetime
 # Create your views here.
 
 
@@ -23,16 +25,16 @@ def all_customers(request):
     return render(request, 'all_customers.html', context)
 
 # url /rent/customer/add – provide a form to add a new customer
+
 def add_customer(request): 
-    #POST
     if request.method == 'POST':
         data = request.POST
-        filled_form = AddCustomerForm(data)
-        if filled_form.is_valid():
-            filled_form.save()
+        form = AddCustomerForm(data)
+        if form.is_valid():
+            form.save()
         else:
-            print(filled_form.errors)
-    # GET
+            print(form.errors)
+    
     add_customer_form = AddCustomerForm()
     context = {'form': add_customer_form}
     return render(request, 'add_customer.html', context)
@@ -41,12 +43,12 @@ def add_rental(request):
     #POST
     if request.method == 'POST':
         data = request.POST
-        filled_form = AddRentalForm(data)
-        if filled_form.is_valid():
-            filled_form.save()
+        form = AddRentalForm(data)
+        if form.is_valid():
+            form.save()
         else:
-            print(filled_form.errors)
-    # GET
+            print(form.errors)
+    
     add_rental_form = AddRentalForm()
     context = {'form': add_rental_form}
     return render(request, 'add_rental.html', context)
@@ -56,13 +58,13 @@ def add_vehicle(request):
     #POST
     if request.method == 'POST':
         data = request.POST
-        filled_form = AddVihicleForm(data)
-        if filled_form.is_valid():
-            filled_form.save()
+        form = AddVihicleForm(data)
+        if form.is_valid():
+            form.save()
         else:
-            print(filled_form.errors)
-    # GET
-    add_vehicle_form = AddVihicleForm()
+            print(form.errors)
+    else:
+        add_vehicle_form = AddVihicleForm()
     context = {'form': add_vehicle_form}
 
     return render(request, 'add_vehicle.html', context)
@@ -76,7 +78,9 @@ def customer_info(request, id):
 # url /rent/rental/<pk> - show the information about the given rental:customer details vehicle detailsrental details (“Returned on: <date>” / “Not yet returned”)
 def rental_info(request, id): 
     rental_info = Rental.objects.get(id=id)
-    context = {'rental_info': rental_info}
+    if request.method == 'POST':
+        rental_info.return_date=datetime.datetime.now()
+        context = {'rental_info': rental_info}
     return render(request, 'rental_info.html', context)
 
 # url /rent/vehicle/<pk> - show the specific vehicle also show whether it’s currently being rented

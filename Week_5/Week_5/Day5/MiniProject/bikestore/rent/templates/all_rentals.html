@@ -7,10 +7,13 @@ All rentals
 {%block content%}
 
 {%for rental in all_rentals%}
-<br><strong> Vehicle: {{rental.vehicle | upper}} </strong> <br>
+<br><strong>Vehicle: <a href="{% url 'rental_info' rental.id %}">{{rental.vehicle | upper}}</a></strong> <br>
 <br><strong>Customer:</strong> {{rental.customer}}</strong><br>
 <br> <strong>Rental date:</strong> {{rental.rental_date}}<br>
 <br> <strong>Return date:</strong> {{rental.return_date}}<br>
-{%endfor%}
+
+{% empty %}
+    <p>No rentals available.</p>
+{% endfor %}
 
 {%endblock%}

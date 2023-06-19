@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+
+          {%if request.user.is_authenticated%}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'my-images' %}">My images</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'upload-image' %}">Add image</a>
+          </li>
+
+          
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'profile' %}"> My profile</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}"> {{user.username}} |Log out</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Log in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">Sign up</a>
+          </li>
+          {%endif%}
+        </ul>
+      </div>
+    </div>
+  </nav>

@@ -9,7 +9,7 @@ Add customer
 <form method="post">
     {%csrf_token%}
     {{form.as_p}}
-    <button type="submit"><a href="{% url 'all_customers'%}">Add customer</a></button></form>
+    <button type="submit">Add customer</button>
 </form>
 
 {%endblock%}

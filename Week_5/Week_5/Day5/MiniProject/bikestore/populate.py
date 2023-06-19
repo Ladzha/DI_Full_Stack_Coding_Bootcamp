@@ -31,4 +31,4 @@ def create_customers(number):
 
     print(f"CREATED {number} Customers")
 
-create_customers(20)
+create_customers(100)

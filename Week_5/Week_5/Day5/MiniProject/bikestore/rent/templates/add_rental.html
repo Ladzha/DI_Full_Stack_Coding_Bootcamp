@@ -8,7 +8,8 @@ Add rental
 <form method="post">
     {%csrf_token%}
     {{form.as_p}}
-    <button type="submit"><a href="{% url 'all_rentals'%}">Add rental</a></button>
+    <button type="submit">Add rental</button>
 </form>
+
 
 {%endblock%}

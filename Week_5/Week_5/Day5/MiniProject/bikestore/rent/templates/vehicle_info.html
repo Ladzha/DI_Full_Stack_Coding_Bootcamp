@@ -8,4 +8,10 @@ Vehicle information
 <br><strong>Size:</strong> {{vehicle_info.size | upper}}</strong><br>
 <br><strong>Real cost:</strong> {{vehicle_info.real_cost}}<br>
 <br><strong>Date created:</strong> {{vehicle_info.date_created}}<br>
+{% if vehicle.is_rented %}
+<p><strong>Status:</strong>Currently Rented</p>
+<button type="submit"> Return</button>
+{% else %}
+<p><strong>Status:</strong>Available</p>
+{% endif %}
 {%endblock%}

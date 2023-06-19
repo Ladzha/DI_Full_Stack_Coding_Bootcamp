@@ -7,10 +7,18 @@ All vehicles
 {%block content%}
 
 {%for vehicle in all_vehicles%}
-<br><strong>Vehicle type: {{vehicle.vehicle_type | upper}}</strong> <br>
+<br><strong>Vehicle type: <a href="{% url 'vehicle_info' vehicle.id %}">{{vehicle.vehicle_type | upper}}</a></strong> <br>
 <br><strong>Size:</strong> {{vehicle.size | upper}}</strong><br>
 <br><strong>Real cost:</strong> {{vehicle.real_cost}}<br>
 <br><strong>Date created:</strong> {{vehicle.date_created}}<br>
+{% if vehicle.is_rented %}
+<p><strong>Status:</strong>Currently Rented</p>
+{% else %}
+<p><strong>Status:</strong>Available</p>
+{% endif %}
+<hr>
+{% empty %}
+<p>No vehicles available.</p>
 {%endfor%}
 
 {%endblock%}

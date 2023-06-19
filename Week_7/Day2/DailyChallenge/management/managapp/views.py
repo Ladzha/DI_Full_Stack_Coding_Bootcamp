@@ -1,14 +1,14 @@
-from django.shortcuts import render
-from django.views.decorators.csrf import csrf_exempt
+# from django.shortcuts import render
+# from django.views.decorators.csrf import csrf_exempt
 from .models import Department, Employee, Task, Project
 from .serializer import DepartmentSerializer, EmployeeSerializer, TaskSerializer, ProjectSerializer
-from rest_framework.views import APIView
-from rest_framework.response import Response
+# from rest_framework.views import APIView
+# from rest_framework.response import Response
 from .permissions import IsDepartmentAdmin
 
 from rest_framework import generics
 
-from rest_framework.generics import ListCreateAPIView, RetrieveAPIView, DestroyAPIView, UpdateAPIView, ListAPIView, RetrieveDestroyAPIView
+# from rest_framework.generics import ListCreateAPIView, RetrieveAPIView, DestroyAPIView, UpdateAPIView, ListAPIView, RetrieveDestroyAPIView
 
 
 #*********departments*********#

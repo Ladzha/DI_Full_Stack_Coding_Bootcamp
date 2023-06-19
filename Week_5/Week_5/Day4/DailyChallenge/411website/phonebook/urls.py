@@ -20,7 +20,7 @@ from info.views import by_phonenumber, by_name, search
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('persons/phonenumber/<str:phonenumber>', by_phonenumber, name= 'number'),
+    path('persons/phonenumber/<str:number>', by_phonenumber, name= 'phone'),
     path('persons/name/<str:name>', by_name, name='name'),
     path('persons/search/', search, name='searchperson'),
 ]

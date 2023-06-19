@@ -1,0 +1,44 @@
+{%extends 'partials/base.html'%}
+
+{%block title%}
+
+{%if request.user.is_authenticated%}
+
+<h1>Movies</h1>
+
+{%endif%}
+
+{%endblock%}
+
+{%block content%}
+
+{%if request.user.is_authenticated%}
+
+{%for film in object_list%}
+<p> <strong> Title: {{film.title}} </strong></p>
+<p>Release date: {{film.release_date}}</p>
+<p>Created in country: {{film.created_in_country}}</p>
+<p>Available in countries: 
+    {% for country in film.available_in_countries.all %}
+    {{ country }}{% if not forloop.last %}, {% endif %}
+    {% endfor %} </p>
+<p>Category:
+    {% for category in film.category.all %}
+    {{ category }}{% if not forloop.last %}, {% endif %}
+    {% endfor %} </p>
+<p>Director:
+    {% for director in film.director.all %}
+    {{ director }}{% if not forloop.last %}, {% endif %}
+    {% endfor %} </p>
+<p>Rivew: 
+    {% for review in film.reviews.all %}
+    {{ review.review_text }}
+    {{ review.rating }}
+    {{ review.review_date}}
+    {{review.author}}
+    {% endfor %} </p>
+
+{%endfor%}
+
+{%endif%}
+{%endblock%}

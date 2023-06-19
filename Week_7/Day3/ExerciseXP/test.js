@@ -1,6 +1,12 @@
 // console.log('lol');
 let arr = ['tiger', 'cat', 'dog', 'bear', 'bird']
 console.log(arr);
+arr.splice(1,'ferret', 'rabbit');
+console.log(arr);
+let arrSlice=arr.slice(0, 4)
+console.log(arrSlice);
+// const arrStr  = arr.join('*');
+// console.log(arrStr);
 // console.log(arr.shift())
 // console.log(arr)
 // console.log(arr.unshift('puma'))
@@ -47,18 +53,41 @@ console.log(arr);
 //     console.log('New loop: for in ' + animal)
 // }
 
-let obj = {
-    firstName : "Sarah",
-    lastName : "Smith",
-    isSingle : true
-}
+// let obj = {
+//     firstName : "Sarah",
+//     lastName : "Smith",
+//     isSingle : true
+// }
 
-let today = new Date();
-console.log(today)
+// let today = new Date();
+// console.log(today)
 
-today.setDate(today.getDate() + 5);
-console.log(today)
+// today.setDate(today.getDate() + 5);
+// console.log(today)
 
 
-let newDay = new Date(2023, 4, 11);
-console.log(newDay)
+// let newDay = new Date(2023, 4, 11);
+// console.log(newDay)
+
+// let str = "Hello Everyone, please say hello to the class ";
+// console.log(str.indexOf('the'));
+
+// console.log(str.substring(0, 5));
+// console.log(str.slice(0, 5));
+// console.log(str.toLocaleLowerCase());
+// let myStr = str.toLocaleUpperCase()
+// console.log(myStr);
+// let myNewStr= myStr.replace('THE', 'BOOOP');
+// console.log(myNewStr);
+
+// let text = str.concat('*****', myStr);
+// console.log(text);
+
+// let text1 = "      Hello World!      ";
+// let text2 = text1.trim();
+// console.log(text1);
+// console.log(text.charAt(0));
+
+// let op = 10.6789
+// console.log(op.toFixed(0));
+// console.log(op.toFixed(3));

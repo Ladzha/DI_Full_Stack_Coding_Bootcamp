@@ -11,8 +11,8 @@ class SearchForm(forms.Form):
     number = PhoneNumberField(region='IL')
     # name = forms.CharField(required=False)
 
-class SearchEmail(forms.Form):
-    email = models.CharField()
+# class SearchEmail(forms.Form):
+#     email = models.CharField()
     
     
 class PersonAdminForm(forms.ModelForm):

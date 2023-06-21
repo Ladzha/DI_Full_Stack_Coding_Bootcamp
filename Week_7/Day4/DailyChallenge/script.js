@@ -15,14 +15,22 @@ const colors = ['red', 'yellow', 'blue', 'green', 'white', 'pink', 'lightblue']
 
 for(let i =0; i< planets.length; i++){
 
-        let divForPlanet = document.createElement('div');
-        divForPlanet.classList.add('planet', colors[i]);
-        divForPlanet.style.backgroundColor=colors[i];
-        section.appendChild(divForPlanet); 
+    const planetName = document.createTextNode(planets[i])
+    const paragraph = document.createElement('p')
+    paragraph.appendChild(planetName)
+
+    const divForPlanet = document.createElement('div');
+    divForPlanet.appendChild(paragraph)
+
+    divForPlanet.classList.add('planet', colors[i]);
+    divForPlanet.style.backgroundColor=colors[i];
+    section.appendChild(divForPlanet); 
 
 };
 
-console.log(section)
+
+//BONUD NOT FINISHED
+
 
 // let moons = {
 //     'Mercury': null,
@@ -34,6 +42,8 @@ console.log(section)
 //     'Uranus': ['Miranda', 'Ariel', 'Umbriel', 'Titania', 'Oberon'],
 //     'Neptune': ['Triton', 'Nereid', 'Proteus']
 //     }
+
+
 
     let moons = [
         {'Mercury': []},

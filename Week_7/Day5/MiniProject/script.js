@@ -1,49 +1,68 @@
-
-let anserCorrect = false
-function playTheGame(){     
-    let answer=confirm('Would like to play the game?');
-    let userNumber;
-    let computerNumber;
-    let counter = 0;
-    if(answer) 
+//#1
+function getConfirmation(){
+    let play=confirm('Would like to play the game?');
+    if(!play)
     {
-        while(!anserCorrect){
-            userNumber = parseInt(prompt('Enter a number between 0 and 10'));     
-            if(isNaN(userNumber)){
-                alert('Sorry Not a number, Goodbye');
-            }else if(userNumber>10 || userNumber<0){
-                alert('Sorry it\'s not a good number, Goodbye');
-            }
-            else {
-            anserCorrect = true
-            computerNumber =Math.floor(Math.random() * 11);
-            console.log(computerNumber); 
-            console.log(userNumber); 
-            compareNumbers(userNumber, computerNumber)
-            counter++;
-            };
-        }
-    }
-
-    else{
         alert('No problem, Goodbye');
-    };
-
-    if(counter>3){
-        alert('Out of chances');
+        return false;
     }
-};
+    else{
+        return true;
+    }
+}
+//#2
+function getInput(){
+    let anserCorrect = false;
+    while(!anserCorrect){
+        userNumber = parseInt(prompt('Enter a number between 0 and 10'));     
+        if(isNaN(userNumber)){
+            alert('Sorry Not a number, try again');
+        }else if(userNumber>10 || userNumber<0){
+            alert('Sorry it\'s not a good number, try again');
+        }
+        else {
+            anserCorrect = true
+        };
+    };
+    return userNumber;
+}
 
+//#3
+function getComputerNumber(){
+    let computerNumber =Math.floor(Math.random() * 11);
+    return computerNumber;
+}
+
+//#4
 function compareNumbers(userNumber, computerNumber){
+    console.log(userNumber);
+    console.log(computerNumber);
+
     if(userNumber ===computerNumber){
         alert('WINNER');
+        return true;
     }
     else if (userNumber>computerNumber) {
-        alert('Your number is bigger then the computer\'s, guess again');
+        alert('Your number is bigger then the computer\'s, guess again')
+        return false;
     }
     else if(userNumber<computerNumber){
         alert('Your number is smaller then the computer\'s, guess again');
+        return false;
     }
 };
 
-playTheGame()
+//#5
+function playTheGame(){  //all together
+    if(getConfirmation()){
+        for (var i = 0; i < 3; i++) {
+            let userNumber=getInput();
+            let computerNumber=getComputerNumber()
+           if(compareNumbers(userNumber, computerNumber)){
+            break;
+           } 
+        }
+        alert('Game over');
+    };
+};
+

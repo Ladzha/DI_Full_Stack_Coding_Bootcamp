@@ -42,9 +42,11 @@ for(let i =0; i< planets.length; i++){
         {planet: 'Neptune', moon: ['Triton', 'Nereid', 'Proteus']}
     ]
 
-const colorsMoons = ['Indigo', 'Coral', 'Lavender', 'Turquoise', 'Maroon', 'Teal', 'Plum', 'Amber', 'Slate', 'Periwinkle', 'Mauve', 'Olive', 'Crimson', 'Sapphire', 'Apricot', 'Jade', 'Lilac', 'Chestnut', 'Emerald', 'Rosewood', 'Azure', 'Orchid', 'Brick', 'Coral', 'Cobalt', 'Papaya', 'Mulberry', 'Topaz', 'Sienna', 'Chartreuse']
+const colorsMoons = ['Indigo', 'Coral', 'Lavender', 'Turquoise', 'Maroon', 'Teal', 'Plum', 'yellow', 'darkgreen', 'darkred', 'darkblue', 'Olive', 'Crimson', 'lightyellow', 'green', 'gray', 'violet', 'gold', 'lightgray', 'Azure', 'Orchid', 'Brick', 'Coral', 'Cobalt', 'Papaya', 'Mulberry', 'Topaz', 'Sienna', 'Chartreuse']
 
 console.log(moons.planet);
+
+    let index = 0;
 
     for(let i =0; i< moons.length; i++){
         let planet = moons[i].planet;
@@ -62,11 +64,8 @@ console.log(moons.planet);
         divForPlanet.style.backgroundColor=colors[i];
         section.appendChild(divForPlanet); 
 
-
-        for(let j =0; j< moonList.length; j++){
+        for(let j=0; j< moonList.length; j++){
             console.log(moonList[j])
-
-
             const moonName = document.createTextNode(moonList[j])
             const paragraphMoon = document.createElement('p')
             paragraphMoon.appendChild(moonName)
@@ -74,10 +73,14 @@ console.log(moons.planet);
             const divForMoon = document.createElement('div');
             divForMoon.appendChild(paragraphMoon)
         
-            divForMoon.classList.add('moon', colorsMoons[j]);
-            divForMoon.style.backgroundColor=colorsMoons[j];
+            console.log("color", colorsMoons[index], "moon", moonList[j]);
+
+            divForMoon.classList.add('moon', colorsMoons[index]);
+            divForMoon.style.backgroundColor=colorsMoons[index];
             divForMoon.style.position = 'relative';
             divForMoon.style.left = '150 px';
             section.appendChild(divForMoon); 
+            index+= 1;
         }
+
 };

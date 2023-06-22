@@ -194,3 +194,45 @@ for (let fruit of fruits) {
 //       padding : 2rem
 //   }
 // </style>
+
+
+const allPlanets = [
+    {
+        namePlanet : "Earth",
+        color : "lightblue",
+        moons : 1
+    },
+    {
+        namePlanet : "Venus",
+        color : "pink",
+        moons : 3
+    },
+    {
+        namePlanet : "Jupiter",
+        color : "orange",
+        moons : 6
+    },
+    {
+        namePlanet : "Uranus",
+        color : "grey",
+        moons : 2
+    }
+]
+
+function addPlanet () {
+    const section = document.querySelector(".listPlanets");
+
+    for (let planet of allPlanets){
+        const divPlanet = document.createElement("div");
+        divPlanet.classList.add("planet");
+        
+        const text = document.createTextNode(planet["namePlanet"]);
+        divPlanet.appendChild(text)
+
+        divPlanet.style.backgroundColor = planet["color"];
+
+        section.appendChild(divPlanet);
+    }
+}
+
+addPlanet()

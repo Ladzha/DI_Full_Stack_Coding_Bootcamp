@@ -19,10 +19,10 @@ console.log(inputSubmit);
 //3 / Retrieve the inputs by their name attribute and console.log them.
 // attribute??????
 
-let inputFirstnameByAttribute = form.elements['fname']
+let inputFirstnameByAttribute = form.querySelector('[name = fname]')
 console.log(inputFirstnameByAttribute);
 
-let inputLastnameAttribute = form.elements['lname']
+let inputLastnameAttribute = form.querySelector('[name = lname]')
 console.log(inputLastnameAttribute);
 
 let inputSubmitAttribute =form.elements['submit']

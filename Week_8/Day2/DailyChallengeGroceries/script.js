@@ -24,13 +24,20 @@ const groceries = {
     }
 };
 
-function displayGroceries(){
-groceries.fruits.forEach(element){
-    console.log(element)
+const displayGroceries = () => groceries.fruits.forEach((element) => console.log(element));
 
-};
-};
+displayGroceries()
 
-function cloneGroceries(){
+const cloneGroceries = () => {
+    let user = client;
+    client='Betty'; // No user will be John because user = client(John) version. And now it's 2 different variables with 2 different places in memory. 
+    console.log(user);
+  
+    let shopping =groceries;
+    groceries.totalPrice = "35$"
+    groceries.other.payed = false
+    // console.log(shopping); //all value: totalPrice, payed in shopping object changed, because shopping object groceries object link to the same place in memory 
 
-};
+    }
+
+cloneGroceries()

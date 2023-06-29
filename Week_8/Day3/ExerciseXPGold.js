@@ -30,6 +30,20 @@ console.log('**** Exercise 3: Remove Certain Values ****');
 const array = [NaN, 0, 15, false, -22, '',undefined, 47, null];
 const result = array.filter(Boolean)
 console.log(result);
-// Expected result : [15, -22, 47]
 
 
+console.log('**** Exercise 4 : Repeat Please! ****');
+
+function repeat (string, number=1){
+    const arr= string.split()
+    for(let i = 0; i<number; i++){
+        const newArr = arr.reduce((acc, element) =>
+        {for(let i = 0; i<number; i++){
+            acc+element
+        }
+        return acc+element}) 
+        // console.log(newArr);
+    }
+    // return string*3
+}
+console.log(repeat('Ha!',3));

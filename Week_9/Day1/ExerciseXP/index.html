@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Exercise 1. Form with "GET" method</h2>
+    <form id="formGet" action="index.html" method="GET">
+        <label for="name">Name</label> <br>
+        <input type="text" id="name" placeholder="Enter your name" required> <br>
+        <label for="name" id="errorName"> </label> <br>
+        <label for="comments">Comments</label> <br>
+        <textarea name="comments" id="comments" cols="25" rows="7" placeholder="Write a new comment" required ></textarea> <br>
+        <input type="submit" value="Send"><br>
+    </form>
+
+    <h2>Exercise 1. Form with "POST" method</h2>
+    <form id="formPost" action="index.html" method="POST">
+        <label for="name">Name</label> <br>
+        <input type="text" id="name" placeholder="Enter your name" required> <br>
+        <label for="comments">Comments</label> <br>
+        <textarea name="comments" id="comments" cols="25" rows="7" placeholder="Write a new comment" required></textarea> <br>
+        <input type="submit" value="Send"><br>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

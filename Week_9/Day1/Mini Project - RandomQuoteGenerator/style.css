@@ -1,0 +1,59 @@
+body{
+    background-color: rgb(155, 139, 119);
+    display: flex;
+    justify-content: center;
+}
+
+#container{
+    margin: 30px;
+    width: 800px;
+    padding: 30px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(151, 210, 84);
+}
+
+#content{
+    text-align: center;
+    margin: 30px;
+    font-size: 20px;
+    justify-items: center;
+    font-weight: bold;
+    padding: 40px;
+    background-color: rgb(195, 255, 140);
+
+}
+
+#myForm{
+    background-color: blanchedalmond;
+}
+
+.author{
+    margin: 10px;
+    font-size: 16px;
+    color: rgb(74, 171, 130);
+
+}
+
+.quote{
+    margin: 10px;
+    font-size: 30px;
+    color: gray;
+
+}
+
+#button{
+    margin: 10px;
+    background-color: rgb(19, 145, 91);
+    color: aliceblue;
+    font-size: 14px;
+}
+
+.buttonView{
+    background-color: bisque;
+    color: rgb(11, 124, 94);
+    width: 50%;
+}

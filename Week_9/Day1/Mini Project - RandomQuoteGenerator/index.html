@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id = "container">
+        <input type="button" id = "button" value="Generate Quote">
+        <section id = "content">
+
+        </section>
+
+        <div>
+            <form id = "myForm" action="index.html">
+                <label for="newAuthor">Author</label> <br>
+                <input type="text" id = "newAuthor" name = newAuthor maxlength="50" required><br>
+                <label for="newQuote">Quote</label><br>
+                <input type="text" id = "newQuote" name = newQuote maxlength="250" required><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <button  class ="buttonView" id ="numberOfCharacters">Amount of characters and spaces</button>
+        <button class ="buttonView" id ="numberOfCharactersNoSpace">Amount of characters</button>
+        <button class ="buttonView" id ="numberOfWords">Amount of words</button>        
+        <button class ="buttonView" id ="likes">Likes</button>
+
+
+
+
+    
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

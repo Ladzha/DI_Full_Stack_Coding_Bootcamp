@@ -39,6 +39,7 @@ function displayGif(data){
     divForGif.appendChild(img);
     divForGif.appendChild(deleteButton);
     divContent.appendChild(divForGif);
+    
     function deleteGif(divToDelete){
         divToDelete = divForGif
         divToDelete.remove()

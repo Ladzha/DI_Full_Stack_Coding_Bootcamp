@@ -1,0 +1,52 @@
+body{
+    background-color: rgb(114, 29, 163);
+    color: white;
+    text-align: center;
+    /* background-image: url("https://i.giphy.com/media/TxVVB6PfWMjE4/200.webp"); */
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+
+}
+
+#page{
+    margin: 0px;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#content{
+    margin: 10%;
+    width: 500px;
+    font-size: 1.4rem;
+    padding: 5%;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 20px;
+}
+
+.header{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.formElement{
+    margin: 5%;
+}
+
+/* .label{
+    font-size: 1.2rem;
+    color: blue;
+} */
+
+.option{
+    font-size: 1.2rem;
+    color: rgb(0, 183, 67);
+}
+
+.signature{
+    font-size: 1rem;
+    /* margin: 3%; */
+}

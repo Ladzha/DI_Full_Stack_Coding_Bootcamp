@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/starjedi-special-edition" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="page">
+        <div id="container">
+            <p class ="header">Currency Converter</p>
+            <div id="content">
+                <form action="" method="get" id="formConvert">
+                    <br><label class ="formElement" for="fromCurrency">From:</label><br>
+                    <select class ="formElement" name="fromCurrency" id="fromCurrency"><br>
+                        <option value="">USD-United</option>
+                    </select>
+                    <br><label  class ="formElement" for="toCurrency">To:</label><br>
+                    <select class ="formElement" name="toCurrency" id="toCurrency"><br>
+                        <option value="">USD-United</option> 
+                    </select>
+                    <br><label class ="formElement" for="amount">Amount:</label><br>
+                    <input class ="formElement" type="float" id="amount" name="amount" placeholder="1"><br>
+                    <input class ="formElement" type="button" value="Convert" id="convertButton" name = "convertButton"><br>
+                </form>
+                <div id="result">800</div>
+
+            </div>
+     </div>
+
+    </div>
+    <p class = 'signature'>Project by Alla Nudelman in Developer.Institute</p>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

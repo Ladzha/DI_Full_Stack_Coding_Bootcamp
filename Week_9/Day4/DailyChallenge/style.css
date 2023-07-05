@@ -1,52 +1,77 @@
+*{
+    box-sizing: border-box;
+}
 body{
-    background-color: rgb(114, 29, 163);
-    color: white;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(224, 223, 223);
+    color: rgb(67, 68, 98);
     text-align: center;
-    /* background-image: url("https://i.giphy.com/media/TxVVB6PfWMjE4/200.webp"); */
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: 'Comme', sans-serif;
+    font-weight: bold;
 
 }
 
 #page{
-    margin: 0px;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(238, 238, 238);
     height: 100vh;
+    width: 100vw;
     text-align: center;
     display: flex;
     justify-content: center;
+    justify-items: center;
     align-items: center;
+    align-content: center;
 
 }
 
 #content{
-    margin: 10%;
     width: 500px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     padding: 5%;
-    border: 2px solid rgb(255, 255, 255);
-    border-radius: 20px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 0 10px 2px rgba(178, 187, 191, 0.5);
 }
 
 .header{
-    color: rgb(255, 255, 255);
     text-align: center;
     font-size: 2.5rem;
 }
 
 .formElement{
-    margin: 5%;
+    border-radius: 3px;
+    width: 70%;
+    height: 40px;
+    margin: 15px;
 }
 
-/* .label{
-    font-size: 1.2rem;
-    color: blue;
-} */
+.label{
+    font-weight: bold;
+}
 
 .option{
-    font-size: 1.2rem;
-    color: rgb(0, 183, 67);
+    color: rgb(80, 81, 107);
 }
 
 .signature{
     font-size: 1rem;
-    /* margin: 3%; */
+    font-weight: lighter;
+}
+
+input{
+    text-align: center;
+    padding-left: 10px;
+}
+
+#convertButton, #switchButton{
+    border: 1px solid lightgray;
+    font-size: 1.2rem;
+}
+
+#convertButton:hover, #switchButton:hover{
+    background-color: rgb(200, 198, 255);
+    font-size: 1.2rem;
 }

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.cdnfonts.com/css/starjedi-special-edition" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comme:wght@200;800&family=Great+Vibes&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -16,17 +19,19 @@
                 <form action="" method="get" id="formConvert">
                     <br><label class ="formElement" for="fromCurrency">From:</label><br>
                     <select class ="formElement" name="fromCurrency" id="fromCurrency"><br>
-                        <option value="">USD-United</option>
+
                     </select>
                     <br><label  class ="formElement" for="toCurrency">To:</label><br>
                     <select class ="formElement" name="toCurrency" id="toCurrency"><br>
-                        <option value="">USD-United</option> 
+
                     </select>
-                    <br><label class ="formElement" for="amount">Amount:</label><br>
+                    <br><label class ="formElement label" for="amount">Amount:</label><br>
                     <input class ="formElement" type="float" id="amount" name="amount" placeholder="1"><br>
                     <input class ="formElement" type="button" value="Convert" id="convertButton" name = "convertButton"><br>
+                    <!-- <input class ="formElement" type="button" value="Switch" id="switchButton" name = "switchButton"><br> -->
+
                 </form>
-                <div id="result">800</div>
+                <div id="result"></div>
 
             </div>
      </div>

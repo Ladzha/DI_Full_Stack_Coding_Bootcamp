@@ -5,9 +5,10 @@ console.log(largeNumber+b);
 
 let http = require("http");
 
-const server = http.createServer(() =>{
+const server = http.createServer((request, response) =>{
+    response.setHeader('Content-Type', 'text/html')
+    response.end('<p>Hello</p>')
     console.log("I'm listening")
 });
 
 server.listen(3000)
-res.setHeader('Content-Type', 'text/html')

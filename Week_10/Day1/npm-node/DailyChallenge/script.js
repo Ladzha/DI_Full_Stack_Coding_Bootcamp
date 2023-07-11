@@ -1,14 +1,15 @@
 // const a = require("largeNumber")
-const largeNumber = require('./main2.js');
+const {largeNumber, getDateTime} = require('./main2.js');
 const b = 5;
-console.log(largeNumber+b);
+const res = largeNumber+b
+console.log(res);
 
-let http = require("http");
+let http = require("http"); 
 
 const server = http.createServer((request, response) =>{
     response.setHeader('Content-Type', 'text/html')
-    response.end('<p>Hello</p>')
+    response.end(`<h1>"Hi there at the frontend"</h1><p>My Module is ${res}</p> <p>${getDateTime()}</p>`)
     console.log("I'm listening")
 });
 
-server.listen(3000)
+server.listen(3001)

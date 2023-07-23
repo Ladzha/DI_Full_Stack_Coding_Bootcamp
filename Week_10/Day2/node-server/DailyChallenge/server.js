@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/aboutMe/:hobby', (request, response)=>{
     const hobby = request.params.hobby
     
-    if(typeof request.params.hobby !== 'string'){
+    if(!containsOnlyLetters(hobby)){
 
         response.status(404).json({msg: "Think again"})
 
@@ -36,6 +36,11 @@ app.post('/formData', (request, response)=>{
     response.send(`${email} sent you a message ${message}`)
 })
 
+
+function containsOnlyLetters(str) {
+    const lettersRegex = /^[A-Za-z]+$/;
+    return lettersRegex.test(str);
+  }
 
 app.listen(3001, () =>{
     console.log("server listen");

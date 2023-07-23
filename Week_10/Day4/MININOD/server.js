@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from 'dotenv';
 import knex from "knex";
 import cors from "cors";
-import db from './config/db.js';
+// import db from './config/db.js';
 import u_router from './routes/usersrouter.js';
 import path from 'path';
 
@@ -18,12 +18,13 @@ const __dirname = path.resolve()
 app.use("/", express.static(__dirname + "/public"))
 dotenv.config()
 
-app.use('/users', u_router)
 
 // db('users')
 // .select('*')
 // .then((rows) => {console.log(rows);})
 
 app.listen(process.env.PORT|| 3005, ()=>{
-    console.log('I am listening')
+    console.log(`I am listening ${process.env.PORT|| 3005}`)
 })
+
+app.use('/users', u_router)

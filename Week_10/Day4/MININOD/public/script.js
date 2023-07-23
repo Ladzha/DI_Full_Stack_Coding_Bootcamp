@@ -26,13 +26,11 @@ const loginUser = async (event)=>{
     const username = event.target.username.value;
     const password = event.target.password.value;
 
-    // const dataFromLogin = new FormData(formLogin);
-    // const objFromLogin = Object.fromEntries(dataFromLogin)
-    // console.log(objFromLogin)
+    // const loginResponse = await fetch('http://localhost:3000/users/login',
 
     try {
 
-        const loginResponse = await fetch('http://localhost:3000/users/login', {
+        const loginResponse = await fetch('/users/login', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -46,7 +44,7 @@ const loginUser = async (event)=>{
         console.log(parseLoginData)
         
     } catch (error) {
-        console.log("LOGIN ERROR")
+        console.log(error, "LOGIN ERROR")
     }
 
 }
@@ -62,10 +60,6 @@ const registerUser = async (event)=>{
 
     console.log(fname, lname, email, username, password);
 
-
-    // const dataFromRegister = new FormData(formRegister);
-    // const objFromRegister = Object.fromEntries(dataFromRegister)
-    // console.log(objFromRegister)
 
     try {
 
@@ -84,7 +78,7 @@ const registerUser = async (event)=>{
 
         
     } catch (error) {
-        console.log("REGISTER ERROR")
+        console.log(error, "REGISTER ERROR")
     }
 
 

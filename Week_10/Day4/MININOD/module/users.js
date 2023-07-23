@@ -2,7 +2,9 @@ import {db} from "../config/db.js"
 import bcrypt from "bcrypt"
 
 export const register = async(first_name, last_name, username, email, hash) =>
-{     const trx = await db.transaction();
+{     
+    console.log('lll',first_name,last_name,username,email,hash);
+    const trx = await db.transaction();
 
 try{
 
@@ -18,9 +20,9 @@ try{
 
     const hashpwd = await db("hashpwd")
     .insert({
-        username:user.username || username,
+        username:user[0].username || username,
         password:hash,
-    }, ["login_id", "username", "password"]).transaction() //tozhe sampoe chto i returning
+    }, ["login_id", "username", "password"]).transacting(trx) //tozhe sampoe chto i returning
 
     console.log("hashpwd=>", hashpwd);
 
@@ -37,10 +39,9 @@ catch(err){
     
 }
 
-export const login = async(username, password) =>
+export const login = (username) =>
 {     
-
-    return await db("hashpwd")
+    return db("hashpwd")
     .join("users", { "users.username": "hashpwd.username" })
     .select("*")
     .where({ 'hashpwd.username': username });

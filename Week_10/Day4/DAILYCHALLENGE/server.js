@@ -38,9 +38,7 @@ app.post("/register", async (req, res)=>{
 
     fs.writeFileSync('data.json', JSON.stringify(users, null, 2));
 
-    res.send('You are a register user now.');
-
-   
+    res.send('You are a register user now.'); 
 })
 
 app.post("/login", async (req, res)=>{

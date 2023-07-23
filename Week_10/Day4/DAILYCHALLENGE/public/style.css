@@ -1,0 +1,11 @@
+body{
+    font-size: 1.4rem;
+    background-color: blanchedalmond;
+}
+input {
+    display: block;
+    margin: 10px;
+    margin-left: 0px;
+    width: 220px;
+    height: 50px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Register</title>
+</head>
+<body>
+    <h3>Register</h3>
+
+    <form method="post" id="registerForm">
+        <label for="firstname">First name</label>
+        <input type="text" name="firstname" id="firstname" placeholder="Enter your first name" required>
+
+        <label for="lastname">Last name</label>
+        <input type="text" name="lastname" id="lastname" placeholder="Enter your last name" required>
+
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" placeholder="Enter your email" required>
+
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" placeholder="Enter your username" required>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Enter your password" required>
+        <button id="registerButton">Register</button>
+        <div id="registerMessage"></div>
+    </form>
+    <div id="loginMessage"></div>
+
+
+    <script src="register.js"></script>
+</body>
+</html>

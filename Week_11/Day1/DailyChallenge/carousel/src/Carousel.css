@@ -1,0 +1,24 @@
+body{
+    text-align: center;
+
+
+}
+
+.small-img{
+
+}
+.label{
+    background-color: black;
+    border-radius: 15px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 100;
+    /* width: 500px; */
+}
+
+.label:hover{
+    background-color: black;
+    color: white;
+    opacity: 50%;
+    border-radius: 15px;
+}

@@ -15,6 +15,7 @@ async function registerUser(event){
     const email = document.getElementById('email').value;
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value; 
+    console.log(firstname, lastname, email, username, password);
 
     const response = await fetch("/register", {
         method: "POST",

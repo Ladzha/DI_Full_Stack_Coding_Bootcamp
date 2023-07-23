@@ -24,10 +24,11 @@ app.get("/register", (req, res)=>{
 
 app.post("/register", async (req, res)=>{
     const { name, lastName, email, username, password } = req.body;
-
-    const data = fs.readFileSync('data.json');
+console.log(req.body)
+    const data = fs.readFileSync('./data.json');
+    console.log(data)
     const users = JSON.parse(data);
-
+console.log(users)
     const userExists = users.find(user => user.username === username || user.password === password);
 
     if(userExists){

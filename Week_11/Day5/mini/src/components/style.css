@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+    text-align: center;
+}
+.container{
+    border-color:darkcyan;
+}
+
+.card{
+    border-radius: 20px;
+    background-color: aliceblue;
+}
+
+.quote{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.author{
+    color: blueviolet;
+}
+
+.button{
+    background-color: darkgrey;
+    border-radius: 10px;
+}

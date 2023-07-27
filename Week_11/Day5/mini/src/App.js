@@ -1,10 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import Quote from './components/Quote.js'
 
 function App() {
   return (
     <div className="container">
- 
+      <Quote/>
     </div>
   );
 }

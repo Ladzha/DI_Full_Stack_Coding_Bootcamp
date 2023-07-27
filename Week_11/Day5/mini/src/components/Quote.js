@@ -1,26 +1,43 @@
 import './style.css'
 import quotes from './quotes'
+import colors from './colors'
 import {useState, useEffect} from 'react'
 
 
 const Quote = ()=>{
     const [num, setNum] = useState(0)
+
+    console.log(quotes.length);
+
     const random = ((min, max)=>{
-        return Math.floor(Math.random()*(max-min+1))+min;
+        let random;
+        do {
+           random = Math.floor(Math.random()*(max-min+1));
+        }while(
+            random===num
+        )
+        return random;
     })
     
+    const ranIndex =random(0, quotes.length);
+
     const handleClick= ()=>{
-        setNum(random(1,2)) 
+        setNum(ranIndex)
     }
 
     return(
-        <div className="card">
-            <h3 className="quote">VOOOOV</h3>
-            <p className="author">author</p>
-            <button className="button" onClick={handleClick}></button>
+        <div className="container" >
+            <div className="card">
+                <h3 className="quote">"{quotes[num].quote}"</h3>
+                <p className="author">{quotes[num].author}</p>
+                <button className="button" onClick={handleClick}>Generate</button>
 
+            </div>
         </div>
+
 
     )
 
 }
+
+export default Quote

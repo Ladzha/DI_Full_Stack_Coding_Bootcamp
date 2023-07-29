@@ -12,7 +12,7 @@ const FormComponent =(props)=>{
         <p>**Lactose free {props.lacto}</p>
         <p>**Vegan free {props.vegan}</p>  
   
-        </>
+        </> 
 
     )
 }

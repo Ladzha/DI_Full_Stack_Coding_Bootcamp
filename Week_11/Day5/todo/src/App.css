@@ -1,38 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #A2FF86;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.todoWrapper {
+  background: #164B60;
+  margin-top: 5rem;
+  padding: 2rem;
+  border-radius: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todoForm {
+  width: 100%;
+}
+
+.todoInput {
+  outline: none;
+  background: none;
+  border: 1px dotted #A2FF86;
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 300px;
+  color: #fff;
+}
+
+.todoInput::placeholder {
+  color: #ffffff4d;
+}
+
+.todoButton {
+  background: transparent;
+  margin-left: 3px;
+  color: #fff;
+  border: 1px dotted #A2FF86;
+  padding: 0.75rem;
+  cursor: pointer; 
+}
+
+.todoButton:hover {
+  background: rgba(0, 0, 0, 0.15);
+  margin-left: 3px;
+  color: #fff;
+  border: 1px dotted #A2FF86;
+  padding: 0.75rem;
+  cursor: pointer; 
+}
+
+.todoButton:active {
+  background: rgba(0, 0, 0, 0.4);
+  margin-left: 3px;
+  color: #fff;
+  border: 1px dotted #A2FF86;
+  padding: 0.75rem;
+  cursor: pointer; 
+}
+
+.elementTodoList {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 1px dotted #A2FF86;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.icon {
+  margin-left: 0.75rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.completed {
+  color: #24666f;
+  text-decoration: line-through;
 }

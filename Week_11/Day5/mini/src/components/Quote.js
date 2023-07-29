@@ -1,4 +1,3 @@
-import './style.css'
 import quotes from './quotes'
 import colors from './colors'
 import {useState, useEffect} from 'react'
@@ -27,15 +26,17 @@ const Quote = ()=>{
 
     return(
         <div className="container" >
-            <div className="card">
-                <h3 className="quote">"{quotes[num].quote}"</h3>
-                <p className="author">{quotes[num].author}</p>
-                <button className="button" onClick={handleClick}>Generate</button>
-
-            </div>
+            {quotes[num].quote?
+                (
+                    <div>
+                    <h2 className="quote">"{quotes[num].quote}"</h2>
+                    <p className="author">{quotes[num].author}</p>
+                    </div>
+                ) : (<h2 className="quote">Try again</h2>
+                )}
+            
+            <button className="button" onClick={handleClick}>Generate</button>
         </div>
-
-
     )
 
 }

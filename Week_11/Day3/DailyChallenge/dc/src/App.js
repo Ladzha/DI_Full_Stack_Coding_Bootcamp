@@ -13,7 +13,7 @@ const [formInputs, setFormsinputs]=useState({
   nuts:"",
   lacto: "",
   vegan: ""
-})
+}) 
 
 const handleChange = (event)=>{
   const name = event.target.name;
